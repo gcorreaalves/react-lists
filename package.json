@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@react-lists",
+  "name": "react-lists",
   "version": "0.1.0",
   "description": "React components to create lists of all kind (reversed, virtualized, grouped).",
   "main": "packages/core/index.js",
