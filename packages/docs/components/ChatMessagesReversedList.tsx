@@ -52,7 +52,7 @@ const groupMessagesByDate = (groupByDate, message) => {
   return groupByDate
 }
 
-const fakeMessages = () => Array(DEFAULT_QUANTITY).fill().map(mapMessages)
+const fakeMessages = () => Array(DEFAULT_QUANTITY).fill({}).map(mapMessages)
 
 const MessageRenderer = ({ text, sender, datetime }) => {
   let messageStyles = styles.message

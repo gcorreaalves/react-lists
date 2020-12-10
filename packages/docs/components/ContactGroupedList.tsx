@@ -3,29 +3,27 @@ import faker from 'faker'
 import List from '@react-lists/core/src/List'
 import styles from '../styles/Home.module.css'
 
-const contacts = Array(100)
-  .fill()
-  .map(() => ({
-    id: faker.random.uuid(),
-    name: faker.name.findName(),
-    phone: faker.phone.phoneNumberFormat(),
-    email: faker.internet.email()
-  }))
-  .sort((contactA, contactB) => contactA.name.localeCompare(contactB.name))
-  .reduce((list, contact) => {
-    const firstChar = contact.name[0].toUpperCase()
+const contacts = Array(100).fill({}).map(() => ({
+  id: faker.random.uuid(),
+  name: faker.name.findName(),
+  phone: faker.phone.phoneNumberFormat(),
+  email: faker.internet.email()
+}))
+.sort((contactA, contactB) => contactA.name.localeCompare(contactB.name))
+.reduce((list, contact) => {
+  const firstChar = contact.name[0].toUpperCase()
 
-    if (!list.hasOwnProperty(firstChar)) {
-      list[firstChar] = {
-        data: [],
-        header: firstChar
-      }
+  if (!list.hasOwnProperty(firstChar)) {
+    list[firstChar] = {
+      data: [],
+      header: firstChar
     }
+  }
 
-    list[firstChar].data.push(contact)
+  list[firstChar].data.push(contact)
 
-    return list
-  }, {})
+  return list
+}, {})
 
 const ContactRenderer = ({ email, name, phone }) => (
   <div className={styles.contact}>

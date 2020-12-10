@@ -6,11 +6,10 @@ import styles from '../styles/Home.module.css'
 const DEFAULT_QUANTITY = 20
 
 const fakeAnimals = (quantity = DEFAULT_QUANTITY) => {
-  return Array(quantity).fill()
-    .map((item, index) => ({
-      id: faker.random.uuid(),
-      url: `${faker.image.animals()}?v=${index}`
-    }))
+  return Array(quantity).fill({}).map((item, index) => ({
+    id: faker.random.uuid(),
+    url: `${faker.image.animals()}?v=${index}`
+  }))
 }
 
 const initialAnimals = fakeAnimals()
