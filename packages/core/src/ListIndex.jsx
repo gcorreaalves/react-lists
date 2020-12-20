@@ -12,7 +12,7 @@ const ListIndex = ({ height, items }) => {
 
   const renderItem = key => (
     <li key={key} style={itemStyles}>
-      <a href={`#${PACKAGE_NAME}-index-${key}`}>{key}</a>
+      <a href={`#${PACKAGE_NAME}-index-${key.toLowerCase()}`}>{key}</a>
     </li>
   )
 
