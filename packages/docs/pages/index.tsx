@@ -369,7 +369,7 @@ import { List } from '@react-lists/core'
               </li>
               <li>
                 <Typography>
-                  <b>itemRenderer</b>: (item) => ReactNode
+                  <b>itemRenderer</b>: (item) =&gt; ReactNode
                 </Typography>
                 Function to determine how the item will be rendered.
               </li>
@@ -381,7 +381,7 @@ import { List } from '@react-lists/core'
               </li>
               <li>
                 <Typography>
-                  <b>loadingRenderer</b>: () => ReactNode
+                  <b>loadingRenderer</b>: () =&gt; ReactNode
                 </Typography>
                 Function to determine how the loading will be rendered.
               </li>
@@ -399,25 +399,25 @@ import { List } from '@react-lists/core'
               </li>
               <li>
                 <Typography>
-                  <b>onBottomReached</b>: () => void
+                  <b>onBottomReached</b>: () =&gt; void
                 </Typography>
                 Callback function executed whenever the list reaches the end.
               </li>
               <li>
                 <Typography>
-                  <b>onItemClick</b>: (item: object) => void
+                  <b>onItemClick</b>: (item: object) =&gt; void
                 </Typography>
                 Callback function executed whenever the user click on an item.
               </li>
               <li>
                 <Typography>
-                  <b>onLoadMore</b>: () => void
+                  <b>onLoadMore</b>: () =&gt; void
                 </Typography>
                 Callback function executed whenever the list reaches the bottom, or the top if it is a reverse list.
               </li>
               <li>
                 <Typography>
-                  <b>onTopReached</b>: () => void
+                  <b>onTopReached</b>: () =&gt; void
                 </Typography>
                 Callback function executed whenever the list reaches the beginning.
               </li>

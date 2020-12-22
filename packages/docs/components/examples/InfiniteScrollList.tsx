@@ -45,7 +45,7 @@ const fakeData = (quantity = DEFAULT_QUANTITY) => {
     user: {
       name: faker.name.findName()
     },
-    content: faker.lorem.sentence,
+    content: faker.lorem.sentence(),
     imageUrl: `${faker.image.animals()}?v=${index}`,
     date: new Intl.DateTimeFormat('en', {
       day: '2-digit',
