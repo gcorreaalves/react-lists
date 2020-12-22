@@ -122,69 +122,8 @@
   }
 }
 
-.section {
-  width: 100%;
-}
-
-.message {
-  background: #f1f1f1;
-  border-radius: 7.5%;
-  color: #4a4a4a;
-  max-width: max-content;
-  min-width: 40%;
-  margin: 10px;
-  padding: 10px 15px;
-  width: 80%;
-}
-
-.messageSender {
-  background: #dcf8c6;
-  margin-left: auto;
-}
-
-.messageHeader {
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.messageBody {
-  font-weight: normal;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.messageFooter {
-  font-weight: normal;
-  font-size: 12px;
-  text-align: right;
-}
-
-.contact {
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-.contactName {
-  font-size: 14px;
-  font-weight: bold;
-  padding-bottom: 5px;
-}
-
-.contactPhone {
-  font-weight: normal;
-  font-size: 16px;
-  padding-bottom: 5px;
-}
-
-.contactEmail {
-  color: blue;
-  font-weight: normal;
-  font-size: 12px;
-}
-
-.animal {
-  margin-bottom: 15px;
+.active {
+  background: rgba(0, 0, 0, 0.04);
+  display: inline-block;
   width: 100%;
 }
