@@ -40,10 +40,6 @@ const styles = {
     color: 'blue',
     fontSize: '14px',
     lineHeight: 1
-  },
-  loading: {
-    paddingBottom: '10px',
-    textAlign: 'center'
   }
 }
 
