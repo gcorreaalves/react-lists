@@ -37,9 +37,14 @@ const styles = {
     width: '100%'
   },
   groupIndexListItem: {
-    color: 'blue',
+    lineHeight: 1,
+    textAlign: 'center'
+  },
+  groupIndexListItemLink: {
+    color: 'rgba(0, 0, 0, 0.54)',
     fontSize: '14px',
-    lineHeight: 1
+    cursor: 'pointer',
+    textDecoration: 'none'
   }
 }
 

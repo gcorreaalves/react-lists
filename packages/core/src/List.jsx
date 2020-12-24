@@ -4,6 +4,7 @@ import Core from './Core'
 import ListItem from './ListItem'
 
 const List = props => {
+  const listRef = React.useRef(null)
   const { items, itemRenderer, onItemClick } = props
 
   const renderItem = (item, index) => {
@@ -20,7 +21,7 @@ const List = props => {
   }
 
   return (
-    <Core {...props}>
+    <Core listRef={listRef} {...props}>
       {items.map(renderItem)}
     </Core>
   )

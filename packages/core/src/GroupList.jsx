@@ -14,6 +14,15 @@ const Group = props => {
     showGroupIndex,
     onItemClick
   } = props
+  const listRef = React.useRef(null)
+
+  const handleIndexItemClick = id => e => {
+    e.preventDefault()
+
+    if (listRef.current) {
+      listRef.current.scrollTop = document.querySelector(id).offsetTop
+    }
+  }
 
   const renderItem = (item, index) => {
     const key = item.id || index
@@ -51,11 +60,15 @@ const Group = props => {
 
   return (
     <div style={styles.root}>
-      <Core {...props}>
+      <Core listRef={listRef} {...props}>
         {renderItems()}
       </Core>
       {showGroupIndex && (
-        <ListIndex height={listHeight} items={Object.keys(items)} />
+        <ListIndex
+          height={listHeight}
+          items={Object.keys(items)}
+          onItemClick={handleIndexItemClick}
+        />
       )}
     </div>
   )

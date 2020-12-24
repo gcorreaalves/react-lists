@@ -8,14 +8,13 @@ const Core = ({
   children,
   displayLoading,
   listHeight,
+  listRef,
   loadingRenderer,
   reversed,
   onBottomReached,
   onLoadMore,
   onTopReached
 }) => {
-  const listRef = React.useRef(null)
-
   const goBackToScrollPosition = React.useCallback(position => {
     const { current: listElement } = listRef
 
