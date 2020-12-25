@@ -15,13 +15,16 @@ const Core = ({
   onLoadMore,
   onTopReached
 }) => {
-  const goBackToScrollPosition = React.useCallback(position => {
-    const { current: listElement } = listRef
+  const goBackToScrollPosition = React.useCallback(
+    position => {
+      const { current: listElement } = listRef
 
-    if (listElement) {
-      listElement.scrollTop = position
-    }
-  }, [])
+      if (listElement) {
+        listElement.scrollTop = position
+      }
+    },
+    [listRef]
+  )
 
   const handleLoadMore = React.useCallback(
     hasLoadMore => {
@@ -31,7 +34,7 @@ const Core = ({
         goBackToScrollPosition(listRef.current.scrollTop)
       }
     },
-    [goBackToScrollPosition, onLoadMore]
+    [goBackToScrollPosition, listRef, onLoadMore]
   )
 
   const handleBottomReached = React.useCallback(() => {
@@ -83,7 +86,7 @@ const Core = ({
     const { offsetHeight, scrollTop, scrollHeight } = listElement
 
     handleEdgesReached(scrollTop, scrollHeight, offsetHeight)
-  }, [handleEdgesReached])
+  }, [handleEdgesReached, listRef])
 
   let listStyles = { ...styles.list }
 

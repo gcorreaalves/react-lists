@@ -33,61 +33,61 @@ import styles from '../styles/Home.module.css'
 
 const drawerWidth = 240
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
+    display: 'flex'
   },
   appBar: {
     background: 'none',
     boxShadow: 'none',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+      duration: theme.transitions.duration.leavingScreen
+    })
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+      duration: theme.transitions.duration.enteringScreen
+    })
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   hide: {
-    display: 'none',
+    display: 'none'
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: drawerWidth
   },
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+      duration: theme.transitions.duration.leavingScreen
     }),
-    marginLeft: -drawerWidth,
+    marginLeft: -drawerWidth
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+      duration: theme.transitions.duration.enteringScreen
     }),
-    marginLeft: 0,
+    marginLeft: 0
   },
   container: {
     maxWidth: '680px',
@@ -118,7 +118,7 @@ export default function PersistentDrawerLeft() {
       <AppBar
         position='fixed'
         className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
+          [classes.appBarShift]: open
         })}
       >
         <Toolbar>
@@ -139,20 +139,22 @@ export default function PersistentDrawerLeft() {
         anchor='left'
         open={open}
         classes={{
-          paper: classes.drawerPaper,
+          paper: classes.drawerPaper
         }}
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === 'ltr' ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
         <MaterialList
           subheader={
-            <ListSubheader component='div'>
-              Documentation
-            </ListSubheader>
+            <ListSubheader component='div'>Documentation</ListSubheader>
           }
         >
           {[
@@ -186,11 +188,7 @@ export default function PersistentDrawerLeft() {
         </MaterialList>
         <Divider />
         <MaterialList
-          subheader={
-            <ListSubheader component='div'>
-              Examples
-            </ListSubheader>
-          }
+          subheader={<ListSubheader component='div'>Examples</ListSubheader>}
         >
           {[
             {
@@ -245,7 +243,7 @@ export default function PersistentDrawerLeft() {
       </Drawer>
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: open,
+          [classes.contentShift]: open
         })}
       >
         <div className={classes.container} id='documentation'>
@@ -258,34 +256,25 @@ export default function PersistentDrawerLeft() {
             </Typography>
 
             <Typography paragraph>
-              React List is a simple, easy to use React component to create different kind of lists. It supports:
+              React List is a simple, easy to use React component to create
+              different kind of lists. It supports:
             </Typography>
 
             <ul>
               <li>
-                <Typography>
-                  virtual list
-                </Typography>
+                <Typography>virtual list</Typography>
               </li>
               <li>
-                <Typography>
-                  infinite scroll
-                </Typography>
+                <Typography>infinite scroll</Typography>
               </li>
               <li>
-                <Typography>
-                  index to browse the list easily
-                </Typography>
+                <Typography>index to browse the list easily</Typography>
               </li>
               <li>
-                <Typography>
-                  grouping with sticky headers
-                </Typography>
+                <Typography>grouping with sticky headers</Typography>
               </li>
               <li>
-                <Typography>
-                  reverse list
-                </Typography>
+                <Typography>reverse list</Typography>
               </li>
             </ul>
 
@@ -298,21 +287,223 @@ export default function PersistentDrawerLeft() {
             </SyntaxHighlighter>
 
             <Box mb={2} mt={2}>
-              <Typography paragraph>
-                If you're using yarn.
-              </Typography>
+              <Typography paragraph>If you are using yarn.</Typography>
               <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>
                 {'yarn add react-lists'}
               </SyntaxHighlighter>
             </Box>
             <Box mb={2} mt={2}>
-              <Typography paragraph>
-                Simple usage example.
-              </Typography>
+              <Typography paragraph>Simple usage example.</Typography>
 
               <List
                 listHeight={400}
-                items={["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"]}
+                items={[
+                  'Afghanistan',
+                  'Albania',
+                  'Algeria',
+                  'Andorra',
+                  'Angola',
+                  'Anguilla',
+                  'Antigua &amp; Barbuda',
+                  'Argentina',
+                  'Armenia',
+                  'Aruba',
+                  'Australia',
+                  'Austria',
+                  'Azerbaijan',
+                  'Bahamas',
+                  'Bahrain',
+                  'Bangladesh',
+                  'Barbados',
+                  'Belarus',
+                  'Belgium',
+                  'Belize',
+                  'Benin',
+                  'Bermuda',
+                  'Bhutan',
+                  'Bolivia',
+                  'Bosnia &amp; Herzegovina',
+                  'Botswana',
+                  'Brazil',
+                  'British Virgin Islands',
+                  'Brunei',
+                  'Bulgaria',
+                  'Burkina Faso',
+                  'Burundi',
+                  'Cambodia',
+                  'Cameroon',
+                  'Cape Verde',
+                  'Cayman Islands',
+                  'Chad',
+                  'Chile',
+                  'China',
+                  'Colombia',
+                  'Congo',
+                  'Cook Islands',
+                  'Costa Rica',
+                  'Cote D Ivoire',
+                  'Croatia',
+                  'Cruise Ship',
+                  'Cuba',
+                  'Cyprus',
+                  'Czech Republic',
+                  'Denmark',
+                  'Djibouti',
+                  'Dominica',
+                  'Dominican Republic',
+                  'Ecuador',
+                  'Egypt',
+                  'El Salvador',
+                  'Equatorial Guinea',
+                  'Estonia',
+                  'Ethiopia',
+                  'Falkland Islands',
+                  'Faroe Islands',
+                  'Fiji',
+                  'Finland',
+                  'France',
+                  'French Polynesia',
+                  'French West Indies',
+                  'Gabon',
+                  'Gambia',
+                  'Georgia',
+                  'Germany',
+                  'Ghana',
+                  'Gibraltar',
+                  'Greece',
+                  'Greenland',
+                  'Grenada',
+                  'Guam',
+                  'Guatemala',
+                  'Guernsey',
+                  'Guinea',
+                  'Guinea Bissau',
+                  'Guyana',
+                  'Haiti',
+                  'Honduras',
+                  'Hong Kong',
+                  'Hungary',
+                  'Iceland',
+                  'India',
+                  'Indonesia',
+                  'Iran',
+                  'Iraq',
+                  'Ireland',
+                  'Isle of Man',
+                  'Israel',
+                  'Italy',
+                  'Jamaica',
+                  'Japan',
+                  'Jersey',
+                  'Jordan',
+                  'Kazakhstan',
+                  'Kenya',
+                  'Kuwait',
+                  'Kyrgyz Republic',
+                  'Laos',
+                  'Latvia',
+                  'Lebanon',
+                  'Lesotho',
+                  'Liberia',
+                  'Libya',
+                  'Liechtenstein',
+                  'Lithuania',
+                  'Luxembourg',
+                  'Macau',
+                  'Macedonia',
+                  'Madagascar',
+                  'Malawi',
+                  'Malaysia',
+                  'Maldives',
+                  'Mali',
+                  'Malta',
+                  'Mauritania',
+                  'Mauritius',
+                  'Mexico',
+                  'Moldova',
+                  'Monaco',
+                  'Mongolia',
+                  'Montenegro',
+                  'Montserrat',
+                  'Morocco',
+                  'Mozambique',
+                  'Namibia',
+                  'Nepal',
+                  'Netherlands',
+                  'Netherlands Antilles',
+                  'New Caledonia',
+                  'New Zealand',
+                  'Nicaragua',
+                  'Niger',
+                  'Nigeria',
+                  'Norway',
+                  'Oman',
+                  'Pakistan',
+                  'Palestine',
+                  'Panama',
+                  'Papua New Guinea',
+                  'Paraguay',
+                  'Peru',
+                  'Philippines',
+                  'Poland',
+                  'Portugal',
+                  'Puerto Rico',
+                  'Qatar',
+                  'Reunion',
+                  'Romania',
+                  'Russia',
+                  'Rwanda',
+                  'Saint Pierre &amp; Miquelon',
+                  'Samoa',
+                  'San Marino',
+                  'Satellite',
+                  'Saudi Arabia',
+                  'Senegal',
+                  'Serbia',
+                  'Seychelles',
+                  'Sierra Leone',
+                  'Singapore',
+                  'Slovakia',
+                  'Slovenia',
+                  'South Africa',
+                  'South Korea',
+                  'Spain',
+                  'Sri Lanka',
+                  'St Kitts &amp; Nevis',
+                  'St Lucia',
+                  'St Vincent',
+                  'St. Lucia',
+                  'Sudan',
+                  'Suriname',
+                  'Swaziland',
+                  'Sweden',
+                  'Switzerland',
+                  'Syria',
+                  'Taiwan',
+                  'Tajikistan',
+                  'Tanzania',
+                  'Thailand',
+                  "Timor L'Este",
+                  'Togo',
+                  'Tonga',
+                  'Trinidad &amp; Tobago',
+                  'Tunisia',
+                  'Turkey',
+                  'Turkmenistan',
+                  'Turks &amp; Caicos',
+                  'Uganda',
+                  'Ukraine',
+                  'United Arab Emirates',
+                  'United Kingdom',
+                  'Uruguay',
+                  'Uzbekistan',
+                  'Venezuela',
+                  'Vietnam',
+                  'Virgin Islands (US)',
+                  'Yemen',
+                  'Zambia',
+                  'Zimbabwe'
+                ]}
                 itemRenderer={({ item }) => {
                   return item
                 }}
@@ -320,8 +511,7 @@ export default function PersistentDrawerLeft() {
             </Box>
 
             <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>
-              {
-  `import React from 'react'
+              {`import React from 'react'
   import { List } from '@react-lists/core'
 
   export default function SampleList() {
@@ -334,8 +524,7 @@ export default function PersistentDrawerLeft() {
         }}
       />
     )
-  }`
-              }
+  }`}
             </SyntaxHighlighter>
           </section>
           <section className={classes.section} id='api-reference'>
@@ -343,27 +532,22 @@ export default function PersistentDrawerLeft() {
               API Reference
             </Typography>
             <Typography gutterBottom>
-              The package exports two components that you can use to create your lists.
+              The package exports two components that you can use to create your
+              lists.
             </Typography>
             <Typography gutterBottom>
               <strong>List</strong>
             </Typography>
-
             <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>
-              {
-`//...
+              {`//...
 import { List } from '@react-lists/core'
-//...`
-              }
+//...`}
             </SyntaxHighlighter>
-
-            <Typography gutterBottom>
-              Attributes:
-            </Typography>
+            <Typography gutterBottom>Attributes:</Typography>
             <ul>
               <li>
                 <Typography>
-                <b>items</b>: object|string[]
+                  <b>items</b>: object|string[]
                 </Typography>
                 Items to be rendered.
               </li>
@@ -377,7 +561,8 @@ import { List } from '@react-lists/core'
                 <Typography>
                   <b>listHeight</b>: number
                 </Typography>
-                The height of the list in pixels. Try to use the height of the parent element or the window to have it dynamically.
+                The height of the list in pixels. Try to use the height of the
+                parent element or the window to have it dynamically.
               </li>
               <li>
                 <Typography>
@@ -395,7 +580,8 @@ import { List } from '@react-lists/core'
                 <Typography>
                   <b>displayLoading</b>: boolean
                 </Typography>
-                Display a loading component when onLoadMore function is executed.
+                Display a loading component when onLoadMore function is
+                executed.
               </li>
               <li>
                 <Typography>
@@ -413,37 +599,35 @@ import { List } from '@react-lists/core'
                 <Typography>
                   <b>onLoadMore</b>: () =&gt; void
                 </Typography>
-                Callback function executed whenever the list reaches the bottom, or the top if it is a reverse list.
+                Callback function executed whenever the list reaches the bottom,
+                or the top if it is a reverse list.
               </li>
               <li>
                 <Typography>
                   <b>onTopReached</b>: () =&gt; void
                 </Typography>
-                Callback function executed whenever the list reaches the beginning.
+                Callback function executed whenever the list reaches the
+                beginning.
               </li>
             </ul>
             <Typography gutterBottom>
               <strong>GroupList</strong>
             </Typography>
-            <Typography gutterBottom>
-              Attributes:
-            </Typography>
-            The GroupList component has the same attributes as the List Component, plus the following:
+            <Typography gutterBottom>Attributes:</Typography>
+            The GroupList component has the same attributes as the List
+            Component, plus the following:
             <ul>
               <li>
                 <Typography>
-                <b>showGroupIndex</b>: boolean
+                  <b>showGroupIndex</b>: boolean
                 </Typography>
                 Display a index menu to navigate bettween the grouped list.
               </li>
             </ul>
-
             <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>
-  {
-`//...
+              {`//...
 import { GroupList } from '@react-lists/core'
-//...`
-  }
+//...`}
             </SyntaxHighlighter>
           </section>
           <section className={classes.section} id='styles'>
@@ -469,7 +653,8 @@ import { GroupList } from '@react-lists/core'
             </Typography>
             <Box mb={3}>
               <Typography>
-                Render thousands of items without affecting the performance of your application using virtual lists.
+                Render thousands of items without affecting the performance of
+                your application using virtual lists.
               </Typography>
             </Box>
           </section>
@@ -479,7 +664,8 @@ import { GroupList } from '@react-lists/core'
             </Typography>
             <Box mb={3}>
               <Typography>
-                Easy customization whether using your own components or overwriting CSS styles.
+                Easy customization whether using your own components or
+                overwriting CSS styles.
               </Typography>
             </Box>
           </section>
@@ -489,7 +675,9 @@ import { GroupList } from '@react-lists/core'
             </Typography>
             <Box mb={3}>
               <Typography>
-                It also supports infinite scroll. You can load your data asynchronously and be free to implement all the logic of how, what and when load more and more data.
+                It also supports infinite scroll. You can load your data
+                asynchronously and be free to implement all the logic of how,
+                what and when load more and more data.
               </Typography>
             </Box>
             <InfiniteScrollList />
@@ -500,7 +688,8 @@ import { GroupList } from '@react-lists/core'
             </Typography>
             <Box mb={3}>
               <Typography>
-                Create grouped lists, make the headers sticky and show the index menu.
+                Create grouped lists, make the headers sticky and show the index
+                menu.
               </Typography>
             </Box>
             <ContactGroupedList />

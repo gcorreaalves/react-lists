@@ -7,13 +7,7 @@ import ListIndex from './ListIndex'
 import { PACKAGE_NAME } from './constants'
 
 const Group = props => {
-  const {
-    items,
-    itemRenderer,
-    listHeight,
-    showGroupIndex,
-    onItemClick
-  } = props
+  const { items, itemRenderer, listHeight, showGroupIndex, onItemClick } = props
   const listRef = React.useRef(null)
 
   const handleIndexItemClick = id => e => {
@@ -53,7 +47,9 @@ const Group = props => {
           </li>
         )
       } else {
-        console.error(`The object should have a attribute called "${groupKey}"`)
+        throw new Error(
+          `The object should have a attribute called "${groupKey}"`
+        )
       }
     })
   }

@@ -22,10 +22,7 @@ const ListItem = ({ item, renderer, onClick }) => {
 }
 
 ListItem.propTypes = {
-  item: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]).isRequired,
+  item: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   renderer: PropTypes.func,
   onClick: PropTypes.func
 }

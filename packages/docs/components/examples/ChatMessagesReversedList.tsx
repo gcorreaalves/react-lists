@@ -134,8 +134,7 @@ export default function ChatMessagesReversedList() {
     }, 2000)
   }
 
-  const codeString =
-  `import React from 'react'
+  const codeString = `import React from 'react'
 import faker from 'faker'
 import { makeStyles } from '@material-ui/core'
 import { GroupList } from '@react-lists/core'

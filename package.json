@@ -5,6 +5,7 @@
   "description": "React components to create lists of all kind (reversed, virtualized, grouped).",
   "main": "packages/core/index.js",
   "scripts": {
+    "lint": "eslint --ext .jsx,.js,.ts,.tsx packages",
     "test": "jest"
   },
   "keywords": [

@@ -34,7 +34,8 @@ const ListIndex = ({ height, items, onItemClick }) => {
 
 ListIndex.propTypes = {
   height: PropTypes.number.isRequired,
-  items: PropTypes.arrayOf(PropTypes.string).isRequired
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onItemClick: PropTypes.func.isRequired
 }
 
 export default ListIndex

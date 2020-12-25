@@ -12,10 +12,12 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const animals = Array(20).fill({}).map((item, index) => ({
-  id: faker.random.uuid(),
-  url: `${faker.image.animals()}?v=${index}`
-}))
+const animals = Array(20)
+  .fill({})
+  .map((item, index) => ({
+    id: faker.random.uuid(),
+    url: `${faker.image.animals()}?v=${index}`
+  }))
 
 const AnimalRenderer = ({ url }) => {
   const classes = useStyles()
@@ -23,8 +25,7 @@ const AnimalRenderer = ({ url }) => {
   return <img className={classes.animal} src={url} />
 }
 
-const codeString =
-`import React from 'react'
+const codeString = `import React from 'react'
 import faker from 'faker'
 import { makeStyles } from '@material-ui/core'
 import { List } from '@react-lists/core'

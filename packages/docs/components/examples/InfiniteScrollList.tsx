@@ -40,59 +40,51 @@ const useStyles = makeStyles(theme => ({
 const DEFAULT_QUANTITY = 20
 
 const fakeData = (quantity = DEFAULT_QUANTITY) => {
-  return Array(quantity).fill({}).map((item, index) => ({
-    id: faker.random.uuid(),
-    user: {
-      name: faker.name.findName()
-    },
-    content: faker.lorem.sentence(),
-    imageUrl: `${faker.image.animals()}?v=${index}`,
-    date: new Intl.DateTimeFormat('en', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric'
-    }).format(faker.date.past())
-  }))
+  return Array(quantity)
+    .fill({})
+    .map((item, index) => ({
+      id: faker.random.uuid(),
+      user: {
+        name: faker.name.findName()
+      },
+      content: faker.lorem.sentence(),
+      imageUrl: `${faker.image.animals()}?v=${index}`,
+      date: new Intl.DateTimeFormat('en', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      }).format(faker.date.past())
+    }))
 }
 
 const initialNews = fakeData()
 
-const NewsRenderer = ({
-  content,
-  date,
-  user,
-  imageUrl
-}) => {
+const NewsRenderer = ({ content, date, user, imageUrl }) => {
   const classes = useStyles()
 
   return (
     <Card className={classes.root}>
       <CardHeader
-        avatar={
-          <Avatar className={classes.avatar} src={imageUrl} />
-        }
+        avatar={<Avatar className={classes.avatar} src={imageUrl} />}
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label='settings'>
             <MoreVertIcon />
           </IconButton>
         }
         title={user.name}
         subheader={date}
       />
-      <CardMedia
-        className={classes.media}
-        image={imageUrl}
-      />
+      <CardMedia className={classes.media} image={imageUrl} />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant='body2' color='textSecondary' component='p'>
           {content}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label='add to favorites'>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label='share'>
           <ShareIcon />
         </IconButton>
       </CardActions>
@@ -100,8 +92,7 @@ const NewsRenderer = ({
   )
 }
 
-const codeString =
-`import React from 'react'
+const codeString = `import React from 'react'
 import faker from 'faker'
 import {
   Avatar,

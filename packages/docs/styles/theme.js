@@ -5,7 +5,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 const theme = createMuiTheme({
   palette: {
     primary: indigo,
-    secondary: pink,
+    secondary: pink
   }
 })
 
