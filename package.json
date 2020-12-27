@@ -6,7 +6,10 @@
   "main": "packages/core/index.js",
   "scripts": {
     "lint": "eslint --ext .jsx,.js,.ts,.tsx packages",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "keywords": [
     "react",
@@ -23,7 +26,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
+    "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -34,8 +39,11 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-standard": "^5.0.0",
+    "husky": "^5.0.6",
     "jest": "^26.6.3",
-    "prettier": "^2.2.1"
+    "pinst": "^2.1.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
   },
   "repository": {
     "type": "git",

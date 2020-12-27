@@ -127,8 +127,13 @@ const Core = ({
 }
 
 Core.propTypes = {
+  children: PropTypes.node.isRequired,
   displayLoading: PropTypes.bool,
   listHeight: PropTypes.number.isRequired,
+  listRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any })
+  ]),
   loadingRenderer: PropTypes.func,
   reversed: PropTypes.bool,
   onBottomReached: PropTypes.func,

@@ -1,5 +1,6 @@
 import React from 'react'
 import faker from 'faker'
+import PropTypes from 'prop-types'
 import { Box, makeStyles } from '@material-ui/core'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
@@ -106,6 +107,15 @@ const MessageRenderer = ({ text, sender, datetime }) => {
   )
 }
 
+MessageRenderer.propTypes = {
+  datetime: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  sender: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired
+}
+
 const initialMessages = fakeMessages()
 
 export default function ChatMessagesReversedList() {
@@ -136,6 +146,7 @@ export default function ChatMessagesReversedList() {
 
   const codeString = `import React from 'react'
 import faker from 'faker'
+import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core'
 import { GroupList } from '@react-lists/core'
 
@@ -238,6 +249,15 @@ const MessageRenderer = ({ text, sender, datetime }) => {
       <div className={classes.footer}>{datetime}</div>
     </div>
   )
+}
+
+MessageRenderer.propTypes = {
+  datetime: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  sender: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired
 }
 
 const initialMessages = fakeMessages()

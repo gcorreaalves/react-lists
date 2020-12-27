@@ -1,11 +1,11 @@
 import React from 'react'
-import { AppProps } from 'next/app'
 import Head from 'next/head'
+import PropTypes from 'prop-types'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from '../styles/theme'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side')
     if (jssStyles && jssStyles.parentElement) {
@@ -16,16 +16,29 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>React Lists - Simple, virtualized, reverse and grouped lists</title>
-        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
-        <meta name='description' content='Documentation and examples of how to create contact and message lists, and how to implement an infinite scroll.' />
+        <title>
+          React Lists - Simple, virtualized, reverse and grouped lists
+        </title>
+        <meta
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width'
+        />
+        <meta
+          name='description'
+          content='Documentation and examples of how to create contact and message lists, and how to implement an infinite scroll.'
+        />
       </Head>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
+}
+
+MyApp.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired
 }
 
 export default MyApp

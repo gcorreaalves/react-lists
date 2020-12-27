@@ -1,5 +1,5 @@
 import React from 'react'
-import faker from 'faker'
+import PropTypes from 'prop-types'
 import { Box, makeStyles } from '@material-ui/core'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
@@ -658,8 +658,15 @@ const ContactRenderer = ({ email, name, phone }) => {
   )
 }
 
+ContactRenderer.propTypes = {
+  email: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired
+}
+
 const codeString = `import React from 'react'
 import faker from 'faker'
+import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core'
 import { GroupList } from '@react-lists/core'
 
@@ -718,6 +725,12 @@ const ContactRenderer = ({ email, name, phone }) => {
       </div>
     </div>
   )
+}
+
+ContactRenderer.propTypes = {
+  email: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired
 }
 
 export default function ContactGroupedList() {

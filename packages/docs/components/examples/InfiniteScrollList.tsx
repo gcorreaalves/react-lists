@@ -1,5 +1,6 @@
 import React from 'react'
 import faker from 'faker'
+import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -92,8 +93,18 @@ const NewsRenderer = ({ content, date, user, imageUrl }) => {
   )
 }
 
+NewsRenderer.propTypes = {
+  content: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired
+}
+
 const codeString = `import React from 'react'
 import faker from 'faker'
+import PropTypes from 'prop-types'
 import {
   Avatar,
   Card,
@@ -189,6 +200,15 @@ const NewsRenderer = ({
       </CardActions>
     </Card>
   )
+}
+
+NewsRenderer.propTypes = {
+  content: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default function InfiniteScrollList() {
