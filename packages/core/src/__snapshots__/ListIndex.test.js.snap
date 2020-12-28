@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListIndex component should render correctly 1`] = `
+<nav
+  style="position:absolute;right:20px;top:0"
+>
+  <ul
+    style="list-style:none;padding:0;margin:0;width:100%"
+  >
+    <li
+      style="line-height:1;text-align:center;padding:9.666666666666668px"
+    >
+      <a
+        style="color:rgba(0, 0, 0, 0.54);font-size:14px;cursor:pointer;text-decoration:none"
+      >
+        A
+      </a>
+    </li>
+    <li
+      style="line-height:1;text-align:center;padding:9.666666666666668px"
+    >
+      <a
+        style="color:rgba(0, 0, 0, 0.54);font-size:14px;cursor:pointer;text-decoration:none"
+      >
+        B
+      </a>
+    </li>
+    <li
+      style="line-height:1;text-align:center;padding:9.666666666666668px"
+    >
+      <a
+        style="color:rgba(0, 0, 0, 0.54);font-size:14px;cursor:pointer;text-decoration:none"
+      >
+        C
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

@@ -15,15 +15,15 @@ const ListItem = ({ item, renderer, onClick }) => {
   }
 
   return (
-    <li>
-      <ItemComponent onClick={handleClick(item)} {...props} />
+    <li onClick={handleClick(item)}>
+      <ItemComponent {...props} />
     </li>
   )
 }
 
 ListItem.propTypes = {
   item: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-  renderer: PropTypes.func,
+  renderer: PropTypes.func.isRequired,
   onClick: PropTypes.func
 }
 

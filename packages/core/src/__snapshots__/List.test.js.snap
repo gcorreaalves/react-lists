@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component should render correctly 1`] = `
+<List
+  itemRenderer={[Function]}
+  items={
+    Array [
+      "one",
+      "two",
+      "three",
+    ]
+  }
+  listHeight={400}
+>
+  <Core
+    itemRenderer={[Function]}
+    items={
+      Array [
+        "one",
+        "two",
+        "three",
+      ]
+    }
+    listHeight={400}
+    listRef={
+      Object {
+        "current": <ul
+          style="list-style: none; padding: 0px; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
+        >
+          <li>
+            one
+          </li>
+          <li>
+            two
+          </li>
+          <li>
+            three
+          </li>
+        </ul>,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      <ul
+        onScroll={[Function]}
+        style={
+          Object {
+            "height": 400,
+            "listStyle": "none",
+            "margin": 0,
+            "overflowY": "scroll",
+            "padding": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <ListItem
+          item="one"
+          key="0"
+          renderer={[Function]}
+        >
+          <li
+            onClick={[Function]}
+          >
+            <itemRenderer
+              item="one"
+            >
+              one
+            </itemRenderer>
+          </li>
+        </ListItem>
+        <ListItem
+          item="two"
+          key="1"
+          renderer={[Function]}
+        >
+          <li
+            onClick={[Function]}
+          >
+            <itemRenderer
+              item="two"
+            >
+              two
+            </itemRenderer>
+          </li>
+        </ListItem>
+        <ListItem
+          item="three"
+          key="2"
+          renderer={[Function]}
+        >
+          <li
+            onClick={[Function]}
+          >
+            <itemRenderer
+              item="three"
+            >
+              three
+            </itemRenderer>
+          </li>
+        </ListItem>
+      </ul>
+    </div>
+  </Core>
+</List>
+`;

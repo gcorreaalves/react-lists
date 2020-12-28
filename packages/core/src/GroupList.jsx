@@ -9,6 +9,7 @@ import { PACKAGE_NAME } from './constants'
 const Group = props => {
   const { items, itemRenderer, listHeight, showGroupIndex, onItemClick } = props
   const listRef = React.useRef(null)
+  const groupKey = 'header'
 
   const handleIndexItemClick = id => e => {
     e.preventDefault()
@@ -32,14 +33,16 @@ const Group = props => {
   }
 
   const renderItems = () => {
-    const groupKey = 'header'
-
     return Object.keys(items).map(key => {
       const header = items[key][groupKey]
 
       if (header) {
         return (
-          <li id={`${PACKAGE_NAME}-index-${key.toLowerCase()}`} key={key}>
+          <li
+            className={`${PACKAGE_NAME}-subheader`}
+            id={`${PACKAGE_NAME}-index-${key.toLowerCase()}`}
+            key={key}
+          >
             <p style={styles.groupedListHeader}>{header}</p>
             <ul style={styles.groupedList}>
               {items[key].data.map(renderItem)}
@@ -62,7 +65,7 @@ const Group = props => {
       {showGroupIndex && (
         <ListIndex
           height={listHeight}
-          items={Object.keys(items)}
+          items={Object.keys(items).map(key => items[key][groupKey])}
           onItemClick={handleIndexItemClick}
         />
       )}

@@ -1,0 +1,542 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupList component should render correctly 1`] = `
+<Group
+  itemRenderer={[Function]}
+  items={
+    Object {
+      "clothing": Object {
+        "data": Array [
+          "Man",
+          "Woman",
+          "Boy",
+          "Girl",
+          "Baby",
+          "Shoes",
+          "Hats",
+        ],
+        "header": "Clothing",
+      },
+      "eletronics": Object {
+        "data": Array [
+          "Computer",
+          "Smartphone",
+          "Tablet",
+          "TV",
+          "Games",
+        ],
+        "header": "Eletronics",
+      },
+      "sports": Object {
+        "data": Array [
+          "Fishing",
+          "Football",
+          "Golf",
+          "Tennis",
+        ],
+        "header": "Sports",
+      },
+    }
+  }
+  listHeight={400}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <Core
+      itemRenderer={[Function]}
+      items={
+        Object {
+          "clothing": Object {
+            "data": Array [
+              "Man",
+              "Woman",
+              "Boy",
+              "Girl",
+              "Baby",
+              "Shoes",
+              "Hats",
+            ],
+            "header": "Clothing",
+          },
+          "eletronics": Object {
+            "data": Array [
+              "Computer",
+              "Smartphone",
+              "Tablet",
+              "TV",
+              "Games",
+            ],
+            "header": "Eletronics",
+          },
+          "sports": Object {
+            "data": Array [
+              "Fishing",
+              "Football",
+              "Golf",
+              "Tennis",
+            ],
+            "header": "Sports",
+          },
+        }
+      }
+      listHeight={400}
+      listRef={
+        Object {
+          "current": <ul
+            style="list-style: none; padding: 0px; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
+          >
+            <li
+              class="react-lists-subheader"
+              id="react-lists-index-clothing"
+            >
+              <p
+                style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 5px;"
+              >
+                Clothing
+              </p>
+              <ul
+                style="list-style: none; padding: 0px; margin: 0px; width: 100%; display: flex; flex-direction: column-reverse;"
+              >
+                <li>
+                  Man
+                </li>
+                <li>
+                  Woman
+                </li>
+                <li>
+                  Boy
+                </li>
+                <li>
+                  Girl
+                </li>
+                <li>
+                  Baby
+                </li>
+                <li>
+                  Shoes
+                </li>
+                <li>
+                  Hats
+                </li>
+              </ul>
+            </li>
+            <li
+              class="react-lists-subheader"
+              id="react-lists-index-eletronics"
+            >
+              <p
+                style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 5px;"
+              >
+                Eletronics
+              </p>
+              <ul
+                style="list-style: none; padding: 0px; margin: 0px; width: 100%; display: flex; flex-direction: column-reverse;"
+              >
+                <li>
+                  Computer
+                </li>
+                <li>
+                  Smartphone
+                </li>
+                <li>
+                  Tablet
+                </li>
+                <li>
+                  TV
+                </li>
+                <li>
+                  Games
+                </li>
+              </ul>
+            </li>
+            <li
+              class="react-lists-subheader"
+              id="react-lists-index-sports"
+            >
+              <p
+                style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 5px;"
+              >
+                Sports
+              </p>
+              <ul
+                style="list-style: none; padding: 0px; margin: 0px; width: 100%; display: flex; flex-direction: column-reverse;"
+              >
+                <li>
+                  Fishing
+                </li>
+                <li>
+                  Football
+                </li>
+                <li>
+                  Golf
+                </li>
+                <li>
+                  Tennis
+                </li>
+              </ul>
+            </li>
+          </ul>,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <ul
+          onScroll={[Function]}
+          style={
+            Object {
+              "height": 400,
+              "listStyle": "none",
+              "margin": 0,
+              "overflowY": "scroll",
+              "padding": 0,
+              "width": "100%",
+            }
+          }
+        >
+          <li
+            className="react-lists-subheader"
+            id="react-lists-index-clothing"
+            key="clothing"
+          >
+            <p
+              style={
+                Object {
+                  "borderBottom": "1px solid #cccccc",
+                  "marginBottom": "10px",
+                  "paddingBottom": "5px",
+                }
+              }
+            >
+              Clothing
+            </p>
+            <ul
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column-reverse",
+                  "listStyle": "none",
+                  "margin": 0,
+                  "padding": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <ListItem
+                item="Man"
+                key="0"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Man"
+                  >
+                    Man
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Woman"
+                key="1"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Woman"
+                  >
+                    Woman
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Boy"
+                key="2"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Boy"
+                  >
+                    Boy
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Girl"
+                key="3"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Girl"
+                  >
+                    Girl
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Baby"
+                key="4"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Baby"
+                  >
+                    Baby
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Shoes"
+                key="5"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Shoes"
+                  >
+                    Shoes
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Hats"
+                key="6"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Hats"
+                  >
+                    Hats
+                  </itemRenderer>
+                </li>
+              </ListItem>
+            </ul>
+          </li>
+          <li
+            className="react-lists-subheader"
+            id="react-lists-index-eletronics"
+            key="eletronics"
+          >
+            <p
+              style={
+                Object {
+                  "borderBottom": "1px solid #cccccc",
+                  "marginBottom": "10px",
+                  "paddingBottom": "5px",
+                }
+              }
+            >
+              Eletronics
+            </p>
+            <ul
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column-reverse",
+                  "listStyle": "none",
+                  "margin": 0,
+                  "padding": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <ListItem
+                item="Computer"
+                key="0"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Computer"
+                  >
+                    Computer
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Smartphone"
+                key="1"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Smartphone"
+                  >
+                    Smartphone
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Tablet"
+                key="2"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Tablet"
+                  >
+                    Tablet
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="TV"
+                key="3"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="TV"
+                  >
+                    TV
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Games"
+                key="4"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Games"
+                  >
+                    Games
+                  </itemRenderer>
+                </li>
+              </ListItem>
+            </ul>
+          </li>
+          <li
+            className="react-lists-subheader"
+            id="react-lists-index-sports"
+            key="sports"
+          >
+            <p
+              style={
+                Object {
+                  "borderBottom": "1px solid #cccccc",
+                  "marginBottom": "10px",
+                  "paddingBottom": "5px",
+                }
+              }
+            >
+              Sports
+            </p>
+            <ul
+              style={
+                Object {
+                  "display": "flex",
+                  "flexDirection": "column-reverse",
+                  "listStyle": "none",
+                  "margin": 0,
+                  "padding": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <ListItem
+                item="Fishing"
+                key="0"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Fishing"
+                  >
+                    Fishing
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Football"
+                key="1"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Football"
+                  >
+                    Football
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Golf"
+                key="2"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Golf"
+                  >
+                    Golf
+                  </itemRenderer>
+                </li>
+              </ListItem>
+              <ListItem
+                item="Tennis"
+                key="3"
+                renderer={[Function]}
+              >
+                <li
+                  onClick={[Function]}
+                >
+                  <itemRenderer
+                    item="Tennis"
+                  >
+                    Tennis
+                  </itemRenderer>
+                </li>
+              </ListItem>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </Core>
+  </div>
+</Group>
+`;
