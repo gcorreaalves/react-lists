@@ -27,6 +27,11 @@ const List = props => {
   )
 }
 
+List.defaultProps = {
+  displayLoading: false,
+  reversed: false
+}
+
 List.propTypes = {
   displayLoading: PropTypes.bool,
   items: PropTypes.oneOfType([

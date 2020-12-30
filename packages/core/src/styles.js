@@ -5,6 +5,7 @@ const styles = {
   list: {
     listStyle: 'none',
     padding: 0,
+    position: 'relative',
     margin: 0,
     width: '100%'
   },
@@ -20,27 +21,33 @@ const styles = {
     display: 'flex',
     flexDirection: 'column-reverse'
   },
-  groupedListHeader: {
-    borderBottom: '1px solid #cccccc',
+  subHeader: {
     marginBottom: '10px',
-    paddingBottom: '5px'
+    paddingBottom: '5px',
+    top: 0,
+    width: '100%',
+    zIndex: 1
   },
-  groupIndex: {
+  subHeaderSticky: {
+    position: 'sticky'
+  },
+  indexMenu: {
     position: 'absolute',
     right: 20,
-    top: 0
+    top: 0,
+    zIndex: 2
   },
-  groupIndexList: {
+  indexMenuList: {
     listStyle: 'none',
     padding: 0,
     margin: 0,
     width: '100%'
   },
-  groupIndexListItem: {
+  indexMenuListItem: {
     lineHeight: 1,
     textAlign: 'center'
   },
-  groupIndexListItemLink: {
+  indexMenuListItemLink: {
     color: 'rgba(0, 0, 0, 0.54)',
     fontSize: '14px',
     cursor: 'pointer',

@@ -95,6 +95,7 @@ describe('List component', () => {
         listHeight={400}
         items={['one', 'two', 'three']}
         itemRenderer={({ item }) => item}
+        onLoadMore={() => {}}
       />
     )
 
@@ -110,6 +111,7 @@ describe('List component', () => {
         loadingRenderer={LoadingRenderer}
         items={['one', 'two', 'three']}
         itemRenderer={({ item }) => item}
+        onLoadMore={() => {}}
       />
     )
 

@@ -7,7 +7,16 @@ import ListIndex from './ListIndex'
 import { PACKAGE_NAME } from './constants'
 
 const Group = props => {
-  const { items, itemRenderer, listHeight, showGroupIndex, onItemClick } = props
+  const {
+    displayIndexMenu,
+    displaySubHeaders,
+    items,
+    itemRenderer,
+    listHeight,
+    stickySubHeaders,
+    subHeaderRenderer,
+    onItemClick
+  } = props
   const listRef = React.useRef(null)
   const groupKey = 'header'
 
@@ -35,6 +44,12 @@ const Group = props => {
   const renderItems = () => {
     return Object.keys(items).map(key => {
       const header = items[key][groupKey]
+      const SubHeaderRenderer = subHeaderRenderer || (({ text }) => text)
+      let subHeaderStyles = styles.subHeader
+
+      if (stickySubHeaders) {
+        subHeaderStyles = { ...subHeaderStyles, ...styles.subHeaderSticky }
+      }
 
       if (header) {
         return (
@@ -43,7 +58,11 @@ const Group = props => {
             id={`${PACKAGE_NAME}-index-${key.toLowerCase()}`}
             key={key}
           >
-            <p style={styles.groupedListHeader}>{header}</p>
+            {displaySubHeaders && (
+              <header style={subHeaderStyles}>
+                <SubHeaderRenderer text={header} />
+              </header>
+            )}
             <ul style={styles.groupedList}>
               {items[key].data.map(renderItem)}
             </ul>
@@ -62,7 +81,7 @@ const Group = props => {
       <Core listRef={listRef} {...props}>
         {renderItems()}
       </Core>
-      {showGroupIndex && (
+      {displayIndexMenu && (
         <ListIndex
           height={listHeight}
           items={Object.keys(items).map(key => items[key][groupKey])}
@@ -73,8 +92,18 @@ const Group = props => {
   )
 }
 
+Group.defaultProps = {
+  displayIndexMenu: false,
+  displayLoading: false,
+  displaySubHeaders: true,
+  reversed: false,
+  stickySubHeaders: true
+}
+
 Group.propTypes = {
+  displayIndexMenu: PropTypes.bool,
   displayLoading: PropTypes.bool,
+  displaySubHeaders: PropTypes.bool,
   items: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.shape({
@@ -86,7 +115,8 @@ Group.propTypes = {
   listHeight: PropTypes.number.isRequired,
   loadingRenderer: PropTypes.func,
   reversed: PropTypes.bool,
-  showGroupIndex: PropTypes.bool,
+  stickySubHeaders: PropTypes.bool,
+  subHeaderRenderer: PropTypes.func,
   onBottomReached: PropTypes.func,
   onItemClick: PropTypes.func,
   onLoadMore: PropTypes.func,

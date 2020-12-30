@@ -6,7 +6,7 @@ import { PACKAGE_NAME } from './constants'
 const ListIndex = ({ height, items, onItemClick }) => {
   const padding = (height / items.length - 14) / 2
   const itemStyles = {
-    ...styles.groupIndexListItem,
+    ...styles.indexMenuListItem,
     padding
   }
 
@@ -14,7 +14,7 @@ const ListIndex = ({ height, items, onItemClick }) => {
     <li key={key} style={itemStyles}>
       <a
         onClick={onItemClick(`#${PACKAGE_NAME}-index-${key.toLowerCase()}`)}
-        style={styles.groupIndexListItemLink}
+        style={styles.indexMenuListItemLink}
       >
         {key}
       </a>
@@ -23,8 +23,8 @@ const ListIndex = ({ height, items, onItemClick }) => {
 
   if (items.length) {
     return (
-      <nav style={styles.groupIndex}>
-        <ul style={styles.groupIndexList}>{items.map(renderItem)}</ul>
+      <nav style={styles.indexMenu}>
+        <ul style={styles.indexMenuList}>{items.map(renderItem)}</ul>
       </nav>
     )
   }

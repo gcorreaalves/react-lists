@@ -80,10 +80,10 @@ describe('GroupList component', () => {
   it('should display index menu', () => {
     const wrapper = render(
       <GroupList
+        displayIndexMenu
         listHeight={400}
         items={mockMenu}
         itemRenderer={({ item }) => item}
-        showGroupIndex
       />
     )
 

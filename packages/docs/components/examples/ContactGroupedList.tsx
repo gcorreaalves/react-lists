@@ -23,6 +23,10 @@ const useStyles = makeStyles(theme => ({
   email: {
     fontSize: theme.typography.pxToRem(12),
     fontWeight: 'normal'
+  },
+  listSubHeader: {
+    background: '#fafafa',
+    borderBottom: '1px solid #cccccc'
   }
 }))
 
@@ -664,6 +668,15 @@ ContactRenderer.propTypes = {
   phone: PropTypes.string.isRequired
 }
 
+const SubHeaderRenderer = ({ text }) => {
+  const classes = useStyles()
+  return <div className={classes.listSubHeader}>{text}</div>
+}
+
+SubHeaderRenderer.propTypes = {
+  text: PropTypes.string.isRequired
+}
+
 const codeString = `import React from 'react'
 import faker from 'faker'
 import PropTypes from 'prop-types'
@@ -688,6 +701,10 @@ const useStyles = makeStyles(theme => ({
   email: {
     fontSize: theme.typography.pxToRem(12),
     fontWeight: 'normal'
+  },
+  listSubHeader: {
+    background: '#fafafa',
+    borderBottom: '1px solid #cccccc'
   }
 }))
 
@@ -733,13 +750,23 @@ ContactRenderer.propTypes = {
   phone: PropTypes.string.isRequired
 }
 
+const SubHeaderRenderer = ({ text }) => {
+  const classes = useStyles()
+  return <div className={classes.listSubHeader}>{text}</div>
+}
+
+SubHeaderRenderer.propTypes = {
+  text: PropTypes.string.isRequired
+}
+
 export default function ContactGroupedList() {
   return (
     <GroupList
+      displayIndexMenu
       items={contacts}
       itemRenderer={ContactRenderer}
       listHeight={500}
-      showGroupIndex
+      subHeaderRenderer={SubHeaderRenderer}
     />
   )
 }`
@@ -749,10 +776,11 @@ export default function ContactGroupedList() {
     <>
       <Box mb={2}>
         <GroupList
+          displayIndexMenu
           items={contacts}
           itemRenderer={ContactRenderer}
           listHeight={500}
-          showGroupIndex
+          subHeaderRenderer={SubHeaderRenderer}
         />
       </Box>
       <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>

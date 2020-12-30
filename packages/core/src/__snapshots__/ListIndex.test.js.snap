@@ -2,7 +2,7 @@
 
 exports[`ListIndex component should render correctly 1`] = `
 <nav
-  style="position:absolute;right:20px;top:0"
+  style="position:absolute;right:20px;top:0;z-index:2"
 >
   <ul
     style="list-style:none;padding:0;margin:0;width:100%"

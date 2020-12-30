@@ -9,7 +9,7 @@ import { GroupList } from '@react-lists/core'
 const useStyles = makeStyles(theme => ({
   message: {
     background: '#f1f1f1',
-    borderRadius: '7.5%',
+    borderRadius: 7.5,
     color: '#4a4a4a',
     maxWidth: 'max-content',
     minWidth: '40%',
@@ -24,18 +24,29 @@ const useStyles = makeStyles(theme => ({
   header: {
     fontWeight: 'bold',
     fontSize: theme.typography.pxToRem(14),
-    marginBottom: '15px',
+    marginBottom: theme.spacing(2),
     textAlign: 'left'
   },
   body: {
     fontWeight: 'normal',
     fontSize: theme.typography.pxToRem(14),
-    marginBottom: '15px'
+    marginBottom: theme.spacing(2)
   },
   footer: {
     fontWeight: 'normal',
     fontSize: theme.typography.pxToRem(12),
     textAlign: 'right'
+  },
+  listSubHeader: {
+    paddingTop: 10
+  },
+  listSubHeaderContent: {
+    background: 'rgba(225, 245, 254, 0.92)',
+    borderRadius: 7.5,
+    fontWeight: 'bold',
+    margin: '5px auto',
+    padding: '10px 15px',
+    width: 'max-content'
   }
 }))
 
@@ -116,6 +127,19 @@ MessageRenderer.propTypes = {
   }).isRequired
 }
 
+const SubHeaderRenderer = ({ text }) => {
+  const classes = useStyles()
+  return (
+    <div className={classes.listSubHeader}>
+      <div className={classes.listSubHeaderContent}>{text}</div>
+    </div>
+  )
+}
+
+SubHeaderRenderer.propTypes = {
+  text: PropTypes.string.isRequired
+}
+
 const initialMessages = fakeMessages()
 
 export default function ChatMessagesReversedList() {
@@ -153,7 +177,7 @@ import { GroupList } from '@react-lists/core'
 const useStyles = makeStyles(theme => ({
   message: {
     background: '#f1f1f1',
-    borderRadius: '7.5%',
+    borderRadius: 7.5,
     color: '#4a4a4a',
     maxWidth: 'max-content',
     minWidth: '40%',
@@ -168,18 +192,29 @@ const useStyles = makeStyles(theme => ({
   header: {
     fontWeight: 'bold',
     fontSize: theme.typography.pxToRem(14),
-    marginBottom: '15px',
+    marginBottom: theme.spacing(2),
     textAlign: 'left'
   },
   body: {
     fontWeight: 'normal',
     fontSize: theme.typography.pxToRem(14),
-    marginBottom: '15px'
+    marginBottom: theme.spacing(2)
   },
   footer: {
     fontWeight: 'normal',
     fontSize: theme.typography.pxToRem(12),
     textAlign: 'right'
+  },
+  listSubHeader: {
+    paddingTop: 10
+  },
+  listSubHeaderContent: {
+    background: 'rgba(225, 245, 254, 0.92)',
+    borderRadius: 7.5,
+    fontWeight: 'bold',
+    margin: '5px auto',
+    padding: '10px 15px',
+    width: 'max-content'
   }
 }))
 
@@ -260,6 +295,21 @@ MessageRenderer.propTypes = {
   }).isRequired
 }
 
+const SubHeaderRenderer = ({ text }) => {
+  const classes = useStyles()
+  return (
+    <div className={classes.listSubHeader}>
+      <div className={classes.listSubHeaderContent}>
+        {text}
+      </div>
+    </div>
+  )
+}
+
+SubHeaderRenderer.propTypes = {
+  text: PropTypes.string.isRequired
+}
+
 const initialMessages = fakeMessages()
 
 export default function ChatMessagesReversedList() {
@@ -294,8 +344,9 @@ return (
     items={messages.sort(sortMessages).reduce(groupMessagesByDate, {})}
     itemRenderer={MessageRenderer}
     listHeight={400}
-    onLoadMore={loadMore}
     reversed
+    subHeaderRenderer={SubHeaderRenderer}
+    onLoadMore={loadMore}
   />
 )`
 
@@ -307,8 +358,9 @@ return (
           items={messages.sort(sortMessages).reduce(groupMessagesByDate, {})}
           itemRenderer={MessageRenderer}
           listHeight={400}
-          onLoadMore={loadMore}
           reversed
+          subHeaderRenderer={SubHeaderRenderer}
+          onLoadMore={loadMore}
         />
       </Box>
       <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>

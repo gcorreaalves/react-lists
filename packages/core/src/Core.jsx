@@ -102,7 +102,7 @@ const Core = ({
   const renderLoading = () => {
     const LoadingComponent = loadingRenderer || Loading
 
-    if (displayLoading) {
+    if (displayLoading && onLoadMore) {
       const key = `${PACKAGE_NAME}-key-loading`
 
       return (
@@ -121,6 +121,11 @@ const Core = ({
       </ul>
     </div>
   )
+}
+
+Core.defaultProps = {
+  displayLoading: false,
+  reversed: false
 }
 
 Core.propTypes = {

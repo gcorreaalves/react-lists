@@ -2,6 +2,7 @@
 
 exports[`List component should render correctly 1`] = `
 <List
+  displayLoading={false}
   itemRenderer={[Function]}
   items={
     Array [
@@ -11,8 +12,10 @@ exports[`List component should render correctly 1`] = `
     ]
   }
   listHeight={400}
+  reversed={false}
 >
   <Core
+    displayLoading={false}
     itemRenderer={[Function]}
     items={
       Array [
@@ -25,7 +28,7 @@ exports[`List component should render correctly 1`] = `
     listRef={
       Object {
         "current": <ul
-          style="list-style: none; padding: 0px; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
+          style="list-style: none; padding: 0px; position: relative; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
         >
           <li>
             one
@@ -39,6 +42,7 @@ exports[`List component should render correctly 1`] = `
         </ul>,
       }
     }
+    reversed={false}
   >
     <div
       style={
@@ -56,6 +60,7 @@ exports[`List component should render correctly 1`] = `
             "margin": 0,
             "overflowY": "scroll",
             "padding": 0,
+            "position": "relative",
             "width": "100%",
           }
         }

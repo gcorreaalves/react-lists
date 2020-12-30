@@ -619,9 +619,27 @@ import { List } from '@react-lists/core'
             <ul>
               <li>
                 <Typography>
-                  <b>showGroupIndex</b>: boolean
+                  <b>displayIndexMenu</b>: boolean
                 </Typography>
                 Display a index menu to navigate bettween the grouped list.
+              </li>
+              <li>
+                <Typography>
+                  <b>displaySubHeaders</b>: boolean
+                </Typography>
+                Display sub headers for the groups.
+              </li>
+              <li>
+                <Typography>
+                  <b>stickySubHeaders</b>: boolean
+                </Typography>
+                Make the sub headers sticky.
+              </li>
+              <li>
+                <Typography>
+                  <b>subHeaderRenderer</b>: (text: string) =&gt; ReactNode
+                </Typography>
+                Function to determine how the sub header will be rendered.
               </li>
             </ul>
             <SyntaxHighlighter language='tsx' showLineNumbers style={darcula}>

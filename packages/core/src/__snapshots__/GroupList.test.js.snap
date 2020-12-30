@@ -2,6 +2,9 @@
 
 exports[`GroupList component should render correctly 1`] = `
 <Group
+  displayIndexMenu={false}
+  displayLoading={false}
+  displaySubHeaders={true}
   itemRenderer={[Function]}
   items={
     Object {
@@ -39,6 +42,8 @@ exports[`GroupList component should render correctly 1`] = `
     }
   }
   listHeight={400}
+  reversed={false}
+  stickySubHeaders={true}
 >
   <div
     style={
@@ -48,6 +53,9 @@ exports[`GroupList component should render correctly 1`] = `
     }
   >
     <Core
+      displayIndexMenu={false}
+      displayLoading={false}
+      displaySubHeaders={true}
       itemRenderer={[Function]}
       items={
         Object {
@@ -88,17 +96,17 @@ exports[`GroupList component should render correctly 1`] = `
       listRef={
         Object {
           "current": <ul
-            style="list-style: none; padding: 0px; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
+            style="list-style: none; padding: 0px; position: relative; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
           >
             <li
               class="react-lists-subheader"
               id="react-lists-index-clothing"
             >
-              <p
-                style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 5px;"
+              <header
+                style="margin-bottom: 10px; padding-bottom: 5px; top: 0px; width: 100%; z-index: 1; position: sticky;"
               >
                 Clothing
-              </p>
+              </header>
               <ul
                 style="list-style: none; padding: 0px; margin: 0px; width: 100%; display: flex; flex-direction: column-reverse;"
               >
@@ -129,11 +137,11 @@ exports[`GroupList component should render correctly 1`] = `
               class="react-lists-subheader"
               id="react-lists-index-eletronics"
             >
-              <p
-                style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 5px;"
+              <header
+                style="margin-bottom: 10px; padding-bottom: 5px; top: 0px; width: 100%; z-index: 1; position: sticky;"
               >
                 Eletronics
-              </p>
+              </header>
               <ul
                 style="list-style: none; padding: 0px; margin: 0px; width: 100%; display: flex; flex-direction: column-reverse;"
               >
@@ -158,11 +166,11 @@ exports[`GroupList component should render correctly 1`] = `
               class="react-lists-subheader"
               id="react-lists-index-sports"
             >
-              <p
-                style="border-bottom: 1px solid #cccccc; margin-bottom: 10px; padding-bottom: 5px;"
+              <header
+                style="margin-bottom: 10px; padding-bottom: 5px; top: 0px; width: 100%; z-index: 1; position: sticky;"
               >
                 Sports
-              </p>
+              </header>
               <ul
                 style="list-style: none; padding: 0px; margin: 0px; width: 100%; display: flex; flex-direction: column-reverse;"
               >
@@ -183,6 +191,8 @@ exports[`GroupList component should render correctly 1`] = `
           </ul>,
         }
       }
+      reversed={false}
+      stickySubHeaders={true}
     >
       <div
         style={
@@ -200,6 +210,7 @@ exports[`GroupList component should render correctly 1`] = `
               "margin": 0,
               "overflowY": "scroll",
               "padding": 0,
+              "position": "relative",
               "width": "100%",
             }
           }
@@ -209,17 +220,24 @@ exports[`GroupList component should render correctly 1`] = `
             id="react-lists-index-clothing"
             key="clothing"
           >
-            <p
+            <header
               style={
                 Object {
-                  "borderBottom": "1px solid #cccccc",
                   "marginBottom": "10px",
                   "paddingBottom": "5px",
+                  "position": "sticky",
+                  "top": 0,
+                  "width": "100%",
+                  "zIndex": 1,
                 }
               }
             >
-              Clothing
-            </p>
+              <Component
+                text="Clothing"
+              >
+                Clothing
+              </Component>
+            </header>
             <ul
               style={
                 Object {
@@ -344,17 +362,24 @@ exports[`GroupList component should render correctly 1`] = `
             id="react-lists-index-eletronics"
             key="eletronics"
           >
-            <p
+            <header
               style={
                 Object {
-                  "borderBottom": "1px solid #cccccc",
                   "marginBottom": "10px",
                   "paddingBottom": "5px",
+                  "position": "sticky",
+                  "top": 0,
+                  "width": "100%",
+                  "zIndex": 1,
                 }
               }
             >
-              Eletronics
-            </p>
+              <Component
+                text="Eletronics"
+              >
+                Eletronics
+              </Component>
+            </header>
             <ul
               style={
                 Object {
@@ -449,17 +474,24 @@ exports[`GroupList component should render correctly 1`] = `
             id="react-lists-index-sports"
             key="sports"
           >
-            <p
+            <header
               style={
                 Object {
-                  "borderBottom": "1px solid #cccccc",
                   "marginBottom": "10px",
                   "paddingBottom": "5px",
+                  "position": "sticky",
+                  "top": 0,
+                  "width": "100%",
+                  "zIndex": 1,
                 }
               }
             >
-              Sports
-            </p>
+              <Component
+                text="Sports"
+              >
+                Sports
+              </Component>
+            </header>
             <ul
               style={
                 Object {
