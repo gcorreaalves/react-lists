@@ -2,7 +2,7 @@
   "private": true,
   "name": "react-lists",
   "version": "0.1.0",
-  "description": "React components to create lists of all kind (reversed, virtualized, grouped).",
+  "description": "React components to create lists of all kind (reverse, virtualized, grouped).",
   "main": "packages/core/index.js",
   "scripts": {
     "lint": "eslint --ext .jsx,.js,.ts,.tsx packages",
@@ -16,7 +16,7 @@
     "lists",
     "virtual",
     "infinite scroll",
-    "reversed",
+    "reverse",
     "material design"
   ],
   "author": "Gustavo Alves",

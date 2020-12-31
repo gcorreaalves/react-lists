@@ -29,7 +29,7 @@ const List = props => {
 
 List.defaultProps = {
   displayLoading: false,
-  reversed: false
+  reverse: false
 }
 
 List.propTypes = {
@@ -44,7 +44,7 @@ List.propTypes = {
   itemRenderer: PropTypes.func.isRequired,
   listHeight: PropTypes.number.isRequired,
   loadingRenderer: PropTypes.func,
-  reversed: PropTypes.bool,
+  reverse: PropTypes.bool,
   onBottomReached: PropTypes.func,
   onItemClick: PropTypes.func,
   onLoadMore: PropTypes.func,

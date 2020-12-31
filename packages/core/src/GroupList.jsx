@@ -6,7 +6,7 @@ import ListItem from './ListItem'
 import ListIndex from './ListIndex'
 import { PACKAGE_NAME } from './constants'
 
-const Group = props => {
+const GroupList = props => {
   const {
     displayIndexMenu,
     displaySubHeaders,
@@ -17,8 +17,8 @@ const Group = props => {
     subHeaderRenderer,
     onItemClick
   } = props
-  const listRef = React.useRef(null)
   const groupKey = 'header'
+  const listRef = React.useRef(null)
 
   const handleIndexItemClick = id => e => {
     e.preventDefault()
@@ -53,13 +53,12 @@ const Group = props => {
 
       if (header) {
         return (
-          <li
-            className={`${PACKAGE_NAME}-subheader`}
-            id={`${PACKAGE_NAME}-index-${key.toLowerCase()}`}
-            key={key}
-          >
+          <li id={`${PACKAGE_NAME}-index-${key.toLowerCase()}`} key={key}>
             {displaySubHeaders && (
-              <header style={subHeaderStyles}>
+              <header
+                className={`${PACKAGE_NAME}-subheader`}
+                style={subHeaderStyles}
+              >
                 <SubHeaderRenderer text={header} />
               </header>
             )}
@@ -92,15 +91,14 @@ const Group = props => {
   )
 }
 
-Group.defaultProps = {
+GroupList.defaultProps = {
   displayIndexMenu: false,
   displayLoading: false,
   displaySubHeaders: true,
-  reversed: false,
   stickySubHeaders: true
 }
 
-Group.propTypes = {
+GroupList.propTypes = {
   displayIndexMenu: PropTypes.bool,
   displayLoading: PropTypes.bool,
   displaySubHeaders: PropTypes.bool,
@@ -114,7 +112,7 @@ Group.propTypes = {
   itemRenderer: PropTypes.func.isRequired,
   listHeight: PropTypes.number.isRequired,
   loadingRenderer: PropTypes.func,
-  reversed: PropTypes.bool,
+  reverse: PropTypes.bool,
   stickySubHeaders: PropTypes.bool,
   subHeaderRenderer: PropTypes.func,
   onBottomReached: PropTypes.func,
@@ -123,4 +121,4 @@ Group.propTypes = {
   onTopReached: PropTypes.func
 }
 
-export default Group
+export default GroupList

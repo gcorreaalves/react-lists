@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GroupList component should render correctly 1`] = `
-<Group
+<GroupList
   displayIndexMenu={false}
   displayLoading={false}
   displaySubHeaders={true}
@@ -42,7 +42,6 @@ exports[`GroupList component should render correctly 1`] = `
     }
   }
   listHeight={400}
-  reversed={false}
   stickySubHeaders={true}
 >
   <div
@@ -99,10 +98,10 @@ exports[`GroupList component should render correctly 1`] = `
             style="list-style: none; padding: 0px; position: relative; margin: 0px; width: 100%; height: 400px; overflow-y: scroll;"
           >
             <li
-              class="react-lists-subheader"
               id="react-lists-index-clothing"
             >
               <header
+                class="react-lists-subheader"
                 style="margin-bottom: 10px; padding-bottom: 5px; top: 0px; width: 100%; z-index: 1; position: sticky;"
               >
                 Clothing
@@ -134,10 +133,10 @@ exports[`GroupList component should render correctly 1`] = `
               </ul>
             </li>
             <li
-              class="react-lists-subheader"
               id="react-lists-index-eletronics"
             >
               <header
+                class="react-lists-subheader"
                 style="margin-bottom: 10px; padding-bottom: 5px; top: 0px; width: 100%; z-index: 1; position: sticky;"
               >
                 Eletronics
@@ -163,10 +162,10 @@ exports[`GroupList component should render correctly 1`] = `
               </ul>
             </li>
             <li
-              class="react-lists-subheader"
               id="react-lists-index-sports"
             >
               <header
+                class="react-lists-subheader"
                 style="margin-bottom: 10px; padding-bottom: 5px; top: 0px; width: 100%; z-index: 1; position: sticky;"
               >
                 Sports
@@ -191,7 +190,6 @@ exports[`GroupList component should render correctly 1`] = `
           </ul>,
         }
       }
-      reversed={false}
       stickySubHeaders={true}
     >
       <div
@@ -216,11 +214,11 @@ exports[`GroupList component should render correctly 1`] = `
           }
         >
           <li
-            className="react-lists-subheader"
             id="react-lists-index-clothing"
             key="clothing"
           >
             <header
+              className="react-lists-subheader"
               style={
                 Object {
                   "marginBottom": "10px",
@@ -358,11 +356,11 @@ exports[`GroupList component should render correctly 1`] = `
             </ul>
           </li>
           <li
-            className="react-lists-subheader"
             id="react-lists-index-eletronics"
             key="eletronics"
           >
             <header
+              className="react-lists-subheader"
               style={
                 Object {
                   "marginBottom": "10px",
@@ -470,11 +468,11 @@ exports[`GroupList component should render correctly 1`] = `
             </ul>
           </li>
           <li
-            className="react-lists-subheader"
             id="react-lists-index-sports"
             key="sports"
           >
             <header
+              className="react-lists-subheader"
               style={
                 Object {
                   "marginBottom": "10px",
@@ -570,5 +568,5 @@ exports[`GroupList component should render correctly 1`] = `
       </div>
     </Core>
   </div>
-</Group>
+</GroupList>
 `;

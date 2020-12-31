@@ -12,7 +12,7 @@ exports[`List component should render correctly 1`] = `
     ]
   }
   listHeight={400}
-  reversed={false}
+  reverse={false}
 >
   <Core
     displayLoading={false}
@@ -42,7 +42,7 @@ exports[`List component should render correctly 1`] = `
         </ul>,
       }
     }
-    reversed={false}
+    reverse={false}
   >
     <div
       style={

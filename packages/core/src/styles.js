@@ -9,7 +9,7 @@ const styles = {
     margin: 0,
     width: '100%'
   },
-  reversedList: {
+  reverseList: {
     display: 'flex',
     flexDirection: 'column-reverse'
   },

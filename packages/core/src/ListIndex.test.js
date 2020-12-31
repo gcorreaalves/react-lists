@@ -20,6 +20,14 @@ describe('ListIndex component', () => {
     expect(wrapper.find('li').length).toBe(3)
   })
 
+  it('should render empty', () => {
+    const wrapper = mount(
+      <ListIndex height={100} items={[]} onItemClick={() => {}} />
+    )
+
+    expect(wrapper.find('li').length).toBe(0)
+  })
+
   it('should call onItemClick', () => {
     const handleClick = jest.fn()
     const wrapper = mount(

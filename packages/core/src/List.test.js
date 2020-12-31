@@ -74,7 +74,7 @@ describe('List component', () => {
         listHeight={400}
         items={['one', 'two', 'three']}
         itemRenderer={({ item }) => item}
-        reversed
+        reverse
       />
     )
 
@@ -85,6 +85,18 @@ describe('List component', () => {
     expect(wrapperReverse.find('ul').prop('style')).toHaveProperty(
       'flexDirection',
       'column-reverse'
+    )
+  })
+
+  it('should throw an Error if listHeader is eq or less than 0', () => {
+    expect(() => {
+      render(
+        <List listHeight={0} items={[]} itemRenderer={({ item }) => item} />
+      )
+    }).toThrowError(
+      new Error(
+        'The attribute listHeight is required and must be greater than 0.'
+      )
     )
   })
 
@@ -159,7 +171,7 @@ describe('List component', () => {
     expect(handleLoadReached).toHaveBeenCalled()
   })
 
-  it('should call onLoadMore on top when list is reversed', () => {
+  it('should call onLoadMore on top when list is reverse', () => {
     const handleLoadReached = jest.fn()
     const wrapper = mount(
       <List
@@ -167,7 +179,7 @@ describe('List component', () => {
         items={[]}
         itemRenderer={({ item }) => item}
         onLoadMore={handleLoadReached}
-        reversed
+        reverse
       />
     )
 
@@ -221,9 +233,9 @@ describe('List component', () => {
 
     const scrollEvent = {
       target: {
-        offsetHeight: 0,
+        offsetHeight: 400,
         scrollHeight: 1000,
-        scrollTop: 400
+        scrollTop: 0
       }
     }
 
@@ -257,9 +269,9 @@ describe('List component', () => {
 
     const scrollEventToTop = {
       target: {
-        offsetHeight: 0,
+        offsetHeight: 400,
         scrollHeight: 1000,
-        scrollTop: 400
+        scrollTop: 0
       }
     }
 
@@ -270,5 +282,88 @@ describe('List component', () => {
 
     expect(handleBottomReached).toHaveBeenCalledTimes(2)
     expect(handleTopReached).toHaveBeenCalledTimes(2)
+  })
+
+  it('should call onBottomReached reverse list', () => {
+    const handleBottomReached = jest.fn()
+    const wrapper = mount(
+      <List
+        listHeight={400}
+        items={[]}
+        itemRenderer={({ item }) => item}
+        reverse
+        onBottomReached={handleBottomReached}
+      />
+    )
+
+    const listElement = wrapper.find('ul').first()
+
+    const scrollEventToBottom = {
+      target: {
+        offsetHeight: 600,
+        scrollHeight: 1000,
+        scrollTop: 0
+      }
+    }
+
+    listElement.simulate('scroll', scrollEventToBottom)
+
+    expect(handleBottomReached).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call onTopReached reverse list', () => {
+    const handleTopReached = jest.fn()
+    const wrapper = mount(
+      <List
+        listHeight={400}
+        items={[]}
+        itemRenderer={({ item }) => item}
+        reverse
+        onTopReached={handleTopReached}
+      />
+    )
+
+    const listElement = wrapper.find('ul').first()
+
+    const scrollEventToTop = {
+      target: {
+        offsetHeight: 600,
+        scrollHeight: 1000,
+        scrollTop: 400
+      }
+    }
+
+    listElement.simulate('scroll', scrollEventToTop)
+
+    expect(handleTopReached).toHaveBeenCalledTimes(1)
+  })
+
+  it('should not call onBottomReached and onTopReached', () => {
+    const handleBottomReached = jest.fn()
+    const handleTopReached = jest.fn()
+    const wrapper = mount(
+      <List
+        listHeight={400}
+        items={[]}
+        itemRenderer={({ item }) => item}
+        onBottomReached={handleBottomReached}
+        onTopReached={handleTopReached}
+      />
+    )
+
+    const listElement = wrapper.find('ul').first()
+
+    const scrollEvent = {
+      target: {
+        offsetHeight: 200,
+        scrollHeight: 1000,
+        scrollTop: 400
+      }
+    }
+
+    listElement.simulate('scroll', scrollEvent)
+
+    expect(handleBottomReached).not.toHaveBeenCalled()
+    expect(handleTopReached).not.toHaveBeenCalled()
   })
 })

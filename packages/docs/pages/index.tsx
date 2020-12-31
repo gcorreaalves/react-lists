@@ -28,7 +28,7 @@ import { List } from '@react-lists/core'
 import SimpleList from '../components/examples/SimpleList'
 import InfiniteScrollList from '../components/examples/InfiniteScrollList'
 import ContactGroupedList from '../components/examples/ContactGroupedList'
-import ChatMessagesReversedList from '../components/examples/ChatMessagesReversedList'
+import ChatMessagesReverseList from '../components/examples/ChatMessagesReverseList'
 import styles from '../styles/Home.module.css'
 
 const drawerWidth = 240
@@ -572,7 +572,7 @@ import { List } from '@react-lists/core'
               </li>
               <li>
                 <Typography>
-                  <b>reversed</b>: boolean
+                  <b>reverse</b>: boolean
                 </Typography>
                 Render the list in reverse.
               </li>
@@ -721,7 +721,7 @@ import { GroupList } from '@react-lists/core'
                 Reverse your all list passing just one simple parameter.
               </Typography>
             </Box>
-            <ChatMessagesReversedList />
+            <ChatMessagesReverseList />
           </section>
         </div>
       </main>

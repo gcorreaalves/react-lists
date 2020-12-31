@@ -142,7 +142,7 @@ SubHeaderRenderer.propTypes = {
 
 const initialMessages = fakeMessages()
 
-export default function ChatMessagesReversedList() {
+export default function ChatMessagesReverseList() {
   const [messages, setMessages] = React.useState(initialMessages)
   const [hasMoreItems, setHasMoreItems] = React.useState(true)
   const [displayLoading, setDisplayLoading] = React.useState(false)
@@ -312,7 +312,7 @@ SubHeaderRenderer.propTypes = {
 
 const initialMessages = fakeMessages()
 
-export default function ChatMessagesReversedList() {
+export default function ChatMessagesReverseList() {
   const [messages, setMessages] = React.useState(initialMessages)
   const [hasMoreItems, setHasMoreItems] = React.useState(true)
   const [displayLoading, setDisplayLoading] = React.useState(false)
@@ -344,7 +344,7 @@ return (
     items={messages.sort(sortMessages).reduce(groupMessagesByDate, {})}
     itemRenderer={MessageRenderer}
     listHeight={400}
-    reversed
+    reverse
     subHeaderRenderer={SubHeaderRenderer}
     onLoadMore={loadMore}
   />
@@ -358,7 +358,7 @@ return (
           items={messages.sort(sortMessages).reduce(groupMessagesByDate, {})}
           itemRenderer={MessageRenderer}
           listHeight={400}
-          reversed
+          reverse
           subHeaderRenderer={SubHeaderRenderer}
           onLoadMore={loadMore}
         />

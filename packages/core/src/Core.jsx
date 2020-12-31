@@ -10,7 +10,7 @@ const Core = ({
   listHeight,
   listRef,
   loadingRenderer,
-  reversed,
+  reverse,
   onBottomReached,
   onLoadMore,
   onTopReached
@@ -38,23 +38,23 @@ const Core = ({
   )
 
   const handleBottomReached = React.useCallback(() => {
-    handleLoadMore(!reversed)
+    handleLoadMore(!reverse)
 
     onBottomReached && onBottomReached()
-  }, [handleLoadMore, onBottomReached, reversed])
+  }, [handleLoadMore, onBottomReached, reverse])
 
   const handleTopReached = React.useCallback(() => {
-    handleLoadMore(reversed)
+    handleLoadMore(reverse)
 
     onTopReached && onTopReached()
-  }, [handleLoadMore, onTopReached, reversed])
+  }, [handleLoadMore, onTopReached, reverse])
 
   const handleEdgesReached = React.useCallback(
     (offsetHeight, scrollHeight, scrollTop) => {
-      if (reversed) {
-        const calc = scrollHeight - (Math.abs(offsetHeight) + scrollTop)
+      const calc = scrollHeight - offsetHeight - Math.abs(scrollTop)
 
-        if (offsetHeight === 0) {
+      if (reverse) {
+        if (scrollTop === 0) {
           return handleBottomReached()
         }
 
@@ -63,9 +63,7 @@ const Core = ({
         }
       }
 
-      const calc = scrollHeight - offsetHeight - Math.abs(scrollTop)
-
-      if (offsetHeight === 0) {
+      if (scrollTop === 0) {
         return handleTopReached()
       }
 
@@ -73,13 +71,12 @@ const Core = ({
         return handleBottomReached()
       }
     },
-    [handleBottomReached, handleTopReached, reversed]
+    [handleBottomReached, handleTopReached, reverse]
   )
 
   const handleScroll = React.useCallback(
     e => {
-      const { offsetHeight, scrollTop, scrollHeight } = e.target
-
+      const { offsetHeight, scrollHeight, scrollTop } = e.target
       handleEdgesReached(offsetHeight, scrollHeight, scrollTop)
     },
     [handleEdgesReached]
@@ -87,16 +84,20 @@ const Core = ({
 
   let listStyles = { ...styles.list }
 
-  if (reversed) {
-    listStyles = { ...listStyles, ...styles.reversedList }
+  if (reverse) {
+    listStyles = { ...listStyles, ...styles.reverseList }
   }
 
-  if (listHeight) {
-    listStyles = {
-      ...listStyles,
-      height: listHeight,
-      overflowY: 'scroll'
-    }
+  if (!listHeight || listHeight <= 0) {
+    throw new Error(
+      'The attribute listHeight is required and must be greater than 0.'
+    )
+  }
+
+  listStyles = {
+    ...listStyles,
+    height: listHeight,
+    overflowY: 'scroll'
   }
 
   const renderLoading = () => {
@@ -124,8 +125,7 @@ const Core = ({
 }
 
 Core.defaultProps = {
-  displayLoading: false,
-  reversed: false
+  displayLoading: false
 }
 
 Core.propTypes = {
@@ -137,7 +137,7 @@ Core.propTypes = {
     PropTypes.shape({ current: PropTypes.any })
   ]),
   loadingRenderer: PropTypes.func,
-  reversed: PropTypes.bool,
+  reverse: PropTypes.bool,
   onBottomReached: PropTypes.func,
   onLoadMore: PropTypes.func,
   onTopReached: PropTypes.func
