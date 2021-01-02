@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from '../styles/theme'
+import { MenuProvider } from '../components/Menu/Context'
 
 const MyApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
@@ -30,7 +31,9 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <MenuProvider>
+          <Component {...pageProps} />
+        </MenuProvider>
       </ThemeProvider>
     </>
   )
