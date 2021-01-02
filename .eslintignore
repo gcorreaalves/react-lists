@@ -1,4 +1,5 @@
 .next
 node_modules
+lib
 coverage
 __snapshots__
