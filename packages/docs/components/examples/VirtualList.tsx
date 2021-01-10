@@ -1,6 +1,5 @@
 import React from 'react'
 import faker from 'faker'
-import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
@@ -20,14 +19,10 @@ const animals = Array(20)
     url: `${faker.image.animals()}?v=${index}`
   }))
 
-const AnimalRenderer = ({ url }) => {
+const AnimalRenderer: React.FunctionComponent<{ url: string }> = ({ url }) => {
   const classes = useStyles()
 
   return <img className={classes.animal} src={url} />
-}
-
-AnimalRenderer.propTypes = {
-  url: PropTypes.string.isRequired
 }
 
 const codeString = `import React from 'react'
@@ -68,7 +63,7 @@ export default function SimpleList() {
   )
 }`
 
-export default function VirtualList() {
+const VirtualList: React.FunctionComponent = () => {
   return (
     <>
       <List listHeight={400} items={animals} itemRenderer={AnimalRenderer} />
@@ -78,3 +73,5 @@ export default function VirtualList() {
     </>
   )
 }
+
+export default VirtualList

@@ -1,6 +1,5 @@
 import React from 'react'
 import faker from 'faker'
-import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -60,7 +59,12 @@ const fakeData = (quantity = DEFAULT_QUANTITY) => {
 
 const initialNews = fakeData()
 
-const NewsRenderer = ({ content, date, user, imageUrl }) => {
+const NewsRenderer: React.FunctionComponent<{
+  content: string
+  date: string
+  user: { name: string }
+  imageUrl: string
+}> = ({ content, date, user, imageUrl }) => {
   const classes = useStyles()
 
   return (
@@ -91,15 +95,6 @@ const NewsRenderer = ({ content, date, user, imageUrl }) => {
       </CardActions>
     </Card>
   )
-}
-
-NewsRenderer.propTypes = {
-  content: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired
-  }).isRequired
 }
 
 const codeString = `import React from 'react'
@@ -248,7 +243,7 @@ export default function InfiniteScrollList() {
   )
 }`
 
-export default function InfiniteScrollList() {
+const InfiniteScrollList: React.FunctionComponent = () => {
   const [news, setNewsFeed] = React.useState(initialNews)
   const [hasMoreItems, setHasMoreItems] = React.useState(true)
   const [displayLoading, setDisplayLoading] = React.useState(false)
@@ -291,3 +286,5 @@ export default function InfiniteScrollList() {
     </>
   )
 }
+
+export default InfiniteScrollList

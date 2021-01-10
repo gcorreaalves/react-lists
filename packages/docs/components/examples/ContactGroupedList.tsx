@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Box, makeStyles } from '@material-ui/core'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
@@ -648,7 +647,11 @@ const contacts = [
     return list
   }, {})
 
-const ContactRenderer = ({ email, name, phone }) => {
+const ContactRenderer: React.FunctionComponent<{
+  email: string
+  name: string
+  phone: string
+}> = ({ email, name, phone }) => {
   const classes = useStyles()
 
   return (
@@ -662,19 +665,11 @@ const ContactRenderer = ({ email, name, phone }) => {
   )
 }
 
-ContactRenderer.propTypes = {
-  email: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired
-}
-
-const SubHeaderRenderer = ({ text }) => {
+const SubHeaderRenderer: React.FunctionComponent<{ text: string }> = ({
+  text
+}) => {
   const classes = useStyles()
   return <div className={classes.listSubHeader}>{text}</div>
-}
-
-SubHeaderRenderer.propTypes = {
-  text: PropTypes.string.isRequired
 }
 
 const codeString = `import React from 'react'
@@ -771,7 +766,7 @@ export default function ContactGroupedList() {
   )
 }`
 
-export default function ContactGroupedList() {
+const ContactGroupedList: React.FunctionComponent = () => {
   return (
     <>
       <Box mb={2}>
@@ -789,3 +784,5 @@ export default function ContactGroupedList() {
     </>
   )
 }
+
+export default ContactGroupedList

@@ -1,6 +1,5 @@
 import React from 'react'
 import faker from 'faker'
-import PropTypes from 'prop-types'
 import { Box, makeStyles } from '@material-ui/core'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
@@ -101,7 +100,14 @@ const groupMessagesByDate = (groupByDate, message) => {
 
 const fakeMessages = () => Array(DEFAULT_QUANTITY).fill({}).map(mapMessages)
 
-const MessageRenderer = ({ text, sender, datetime }) => {
+const MessageRenderer: React.FunctionComponent<{
+  text: string
+  sender: {
+    id: number
+    name: string
+  }
+  datetime: string
+}> = ({ text, sender, datetime }) => {
   const classes = useStyles()
   let messageStyles = classes.message
 
@@ -118,16 +124,9 @@ const MessageRenderer = ({ text, sender, datetime }) => {
   )
 }
 
-MessageRenderer.propTypes = {
-  datetime: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  sender: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired
-  }).isRequired
-}
-
-const SubHeaderRenderer = ({ text }) => {
+const SubHeaderRenderer: React.FunctionComponent<{
+  text: string
+}> = ({ text }) => {
   const classes = useStyles()
   return (
     <div className={classes.listSubHeader}>
@@ -136,13 +135,9 @@ const SubHeaderRenderer = ({ text }) => {
   )
 }
 
-SubHeaderRenderer.propTypes = {
-  text: PropTypes.string.isRequired
-}
-
 const initialMessages = fakeMessages()
 
-export default function ChatMessagesReverseList() {
+const ChatMessagesReverseList: React.FunctionComponent = () => {
   const [messages, setMessages] = React.useState(initialMessages)
   const [hasMoreItems, setHasMoreItems] = React.useState(true)
   const [displayLoading, setDisplayLoading] = React.useState(false)
@@ -369,3 +364,5 @@ return (
     </>
   )
 }
+
+export default ChatMessagesReverseList

@@ -1,21 +1,62 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import styles from './styles'
-import Core from './Core'
+import Core, { CoreTypes } from './Core'
 import ListItem from './ListItem'
 import ListIndex from './ListIndex'
 import { PACKAGE_NAME } from './constants'
 
-const GroupList = props => {
+const styles: { [key: string]: React.CSSProperties } = {
+  root: {
+    position: 'relative'
+  },
+  groupedList: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column-reverse'
+  },
+  subHeader: {
+    marginBottom: '10px',
+    paddingBottom: '5px',
+    top: 0,
+    width: '100%',
+    zIndex: 1
+  },
+  subHeaderSticky: {
+    position: 'sticky'
+  }
+}
+
+interface GroupListTypes extends CoreTypes {
+  displayIndexMenu?: boolean
+  displaySubHeaders?: boolean
+  items: {
+    [key: string]: {
+      header: string
+      data: Array<unknown>
+    }
+  }
+  itemRenderer: React.FunctionComponent
+  stickySubHeaders: boolean
+  subHeaderRenderer?: React.FunctionComponent<{ text: string }>
+  onItemClick?: (event: React.MouseEvent) => void
+}
+
+const SubHeaderDefault: React.FunctionComponent<{ text: string }> = ({
+  text
+}) => <>{text}</>
+
+const GroupList: React.FunctionComponent<GroupListTypes> = props => {
   const {
     displayIndexMenu,
-    displaySubHeaders,
     items,
     itemRenderer,
     listHeight,
-    stickySubHeaders,
     subHeaderRenderer,
-    onItemClick
+    onItemClick,
+    displaySubHeaders = true,
+    stickySubHeaders = true
   } = props
   const groupKey = 'header'
   const listRef = React.useRef(null)
@@ -44,7 +85,7 @@ const GroupList = props => {
   const renderItems = () => {
     return Object.keys(items).map(key => {
       const header = items[key][groupKey]
-      const SubHeaderRenderer = subHeaderRenderer || (({ text }) => text)
+      const SubHeaderRenderer = subHeaderRenderer || SubHeaderDefault
       let subHeaderStyles = styles.subHeader
 
       if (stickySubHeaders) {
@@ -89,36 +130,6 @@ const GroupList = props => {
       )}
     </div>
   )
-}
-
-GroupList.defaultProps = {
-  displayIndexMenu: false,
-  displayLoading: false,
-  displaySubHeaders: true,
-  stickySubHeaders: true
-}
-
-GroupList.propTypes = {
-  displayIndexMenu: PropTypes.bool,
-  displayLoading: PropTypes.bool,
-  displaySubHeaders: PropTypes.bool,
-  items: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.shape({
-      data: PropTypes.arrayOf(PropTypes.object),
-      header: PropTypes.string
-    })
-  ]).isRequired,
-  itemRenderer: PropTypes.func.isRequired,
-  listHeight: PropTypes.number.isRequired,
-  loadingRenderer: PropTypes.func,
-  reverse: PropTypes.bool,
-  stickySubHeaders: PropTypes.bool,
-  subHeaderRenderer: PropTypes.func,
-  onBottomReached: PropTypes.func,
-  onItemClick: PropTypes.func,
-  onLoadMore: PropTypes.func,
-  onTopReached: PropTypes.func
 }
 
 export default GroupList

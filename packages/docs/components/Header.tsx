@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Header = () => {
+const Header: React.FunctionComponent = () => {
   const classes = useStyles()
   const open = useMenuOpen()
   const dispatch = useDispatchMenuOpen()

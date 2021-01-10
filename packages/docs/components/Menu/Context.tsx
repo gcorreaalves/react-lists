@@ -1,10 +1,11 @@
 import React, { useReducer, useContext, createContext } from 'react'
-import PropTypes from 'prop-types'
 
-const MenuStateContext = createContext({})
-const MenuDispatchContext = createContext({})
+interface Action {
+  type: string
+  payload: boolean
+}
 
-const reducer = (state, action) => {
+const reducer = (state: boolean, action: Action) => {
   switch (action.type) {
     case 'OPEN':
       return true
@@ -15,7 +16,10 @@ const reducer = (state, action) => {
   }
 }
 
-function Provider({ children }) {
+const MenuStateContext = createContext(false)
+const MenuDispatchContext = createContext(action => console.log(action))
+
+const Provider: React.FunctionComponent = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, true)
 
   return (
@@ -27,12 +31,9 @@ function Provider({ children }) {
   )
 }
 
-Provider.propTypes = {
-  children: PropTypes.node.isRequired
-}
-
 export const MENU_CLOSE = 'CLOSE'
 export const MENU_OPEN = 'OPEN'
 export const MenuProvider = Provider
-export const useMenuOpen = () => useContext(MenuStateContext)
-export const useDispatchMenuOpen = () => useContext(MenuDispatchContext)
+export const useMenuOpen = (): boolean => useContext(MenuStateContext)
+export const useDispatchMenuOpen = (): React.Dispatch<Action> =>
+  useContext(MenuDispatchContext)

@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: './packages/core/index.js',
+  entry: './packages/core/index.ts',
   output: {
     path: path.resolve('lib'),
     filename: 'index.js',
@@ -10,12 +10,12 @@ module.exports = {
     libraryTarget: 'commonjs2'
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|ts)x?$/,
         exclude: /(node_modules)/,
         use: ['babel-loader']
       }

@@ -48,14 +48,14 @@ const useStyles = makeStyles(theme => {
   }
 })
 
-export default function Index() {
+const Index: React.FunctionComponent = () => {
   const menuOpen = useMenuOpen()
   const dispatchMenuOpen = useDispatchMenuOpen()
   const classes = useStyles({ menuOpen })
   const theme = useTheme()
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down('sm'))
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const actionType = isMobileOrTablet ? MENU_CLOSE : MENU_OPEN
     dispatchMenuOpen({ type: actionType })
   }, [dispatchMenuOpen, isMobileOrTablet])
@@ -84,3 +84,5 @@ export default function Index() {
     </div>
   )
 }
+
+export default Index

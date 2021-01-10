@@ -107,7 +107,9 @@ describe('List component', () => {
         listHeight={400}
         items={['one', 'two', 'three']}
         itemRenderer={({ item }) => item}
-        onLoadMore={() => {}}
+        onLoadMore={() => {
+          console.log('load more datas')
+        }}
       />
     )
 
@@ -123,7 +125,9 @@ describe('List component', () => {
         loadingRenderer={LoadingRenderer}
         items={['one', 'two', 'three']}
         itemRenderer={({ item }) => item}
-        onLoadMore={() => {}}
+        onLoadMore={() => {
+          console.log('load more datas')
+        }}
       />
     )
 

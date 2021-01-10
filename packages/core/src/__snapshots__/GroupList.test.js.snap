@@ -2,9 +2,6 @@
 
 exports[`GroupList component should render correctly 1`] = `
 <GroupList
-  displayIndexMenu={false}
-  displayLoading={false}
-  displaySubHeaders={true}
   itemRenderer={[Function]}
   items={
     Object {
@@ -42,7 +39,6 @@ exports[`GroupList component should render correctly 1`] = `
     }
   }
   listHeight={400}
-  stickySubHeaders={true}
 >
   <div
     style={
@@ -52,9 +48,6 @@ exports[`GroupList component should render correctly 1`] = `
     }
   >
     <Core
-      displayIndexMenu={false}
-      displayLoading={false}
-      displaySubHeaders={true}
       itemRenderer={[Function]}
       items={
         Object {
@@ -190,7 +183,6 @@ exports[`GroupList component should render correctly 1`] = `
           </ul>,
         }
       }
-      stickySubHeaders={true}
     >
       <div
         style={
@@ -230,11 +222,11 @@ exports[`GroupList component should render correctly 1`] = `
                 }
               }
             >
-              <Component
+              <SubHeaderDefault
                 text="Clothing"
               >
                 Clothing
-              </Component>
+              </SubHeaderDefault>
             </header>
             <ul
               style={
@@ -372,11 +364,11 @@ exports[`GroupList component should render correctly 1`] = `
                 }
               }
             >
-              <Component
+              <SubHeaderDefault
                 text="Eletronics"
               >
                 Eletronics
-              </Component>
+              </SubHeaderDefault>
             </header>
             <ul
               style={
@@ -484,11 +476,11 @@ exports[`GroupList component should render correctly 1`] = `
                 }
               }
             >
-              <Component
+              <SubHeaderDefault
                 text="Sports"
               >
                 Sports
-              </Component>
+              </SubHeaderDefault>
             </header>
             <ul
               style={

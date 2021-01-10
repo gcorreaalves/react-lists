@@ -3,13 +3,13 @@ import { Typography, makeStyles } from '@material-ui/core'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   section: {
     marginTop: 50
   }
 }))
 
-const ApiReferenceSection = () => {
+const ApiReferenceSection: React.FunctionComponent = () => {
   const classes = useStyles()
 
   return (

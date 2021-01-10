@@ -1,10 +1,36 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import styles from './styles'
 import Loading from './Loading'
 import { PACKAGE_NAME } from './constants'
 
-const Core = ({
+const styles: { [key: string]: React.CSSProperties } = {
+  root: {
+    position: 'relative'
+  },
+  list: {
+    listStyle: 'none',
+    padding: 0,
+    position: 'relative',
+    margin: 0,
+    width: '100%'
+  },
+  reverseList: {
+    display: 'flex',
+    flexDirection: 'column-reverse'
+  }
+}
+
+export interface CoreTypes {
+  displayLoading?: boolean
+  listHeight: number
+  listRef: React.RefObject<HTMLUListElement>
+  loadingRenderer?: React.FunctionComponent
+  reverse?: boolean
+  onBottomReached?: () => void
+  onLoadMore?: () => void
+  onTopReached?: () => void
+}
+
+const Core: React.FunctionComponent<CoreTypes> = ({
   children,
   displayLoading,
   listHeight,
@@ -122,25 +148,6 @@ const Core = ({
       </ul>
     </div>
   )
-}
-
-Core.defaultProps = {
-  displayLoading: false
-}
-
-Core.propTypes = {
-  children: PropTypes.node.isRequired,
-  displayLoading: PropTypes.bool,
-  listHeight: PropTypes.number.isRequired,
-  listRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any })
-  ]),
-  loadingRenderer: PropTypes.func,
-  reverse: PropTypes.bool,
-  onBottomReached: PropTypes.func,
-  onLoadMore: PropTypes.func,
-  onTopReached: PropTypes.func
 }
 
 export default Core

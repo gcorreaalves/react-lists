@@ -2,7 +2,6 @@
 
 exports[`List component should render correctly 1`] = `
 <List
-  displayLoading={false}
   itemRenderer={[Function]}
   items={
     Array [
@@ -12,10 +11,8 @@ exports[`List component should render correctly 1`] = `
     ]
   }
   listHeight={400}
-  reverse={false}
 >
   <Core
-    displayLoading={false}
     itemRenderer={[Function]}
     items={
       Array [
@@ -42,7 +39,6 @@ exports[`List component should render correctly 1`] = `
         </ul>,
       }
     }
-    reverse={false}
   >
     <div
       style={

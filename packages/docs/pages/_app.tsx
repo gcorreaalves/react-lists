@@ -1,12 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
-import PropTypes from 'prop-types'
+import { AppProps } from 'next/app'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from '../styles/theme'
 import { MenuProvider } from '../components/Menu/Context'
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp: React.FunctionComponent<{
+  Component: React.FunctionComponent
+  pageProps: AppProps
+}> = ({ Component, pageProps }) => {
   React.useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side')
     if (jssStyles && jssStyles.parentElement) {
@@ -37,11 +40,6 @@ const MyApp = ({ Component, pageProps }) => {
       </ThemeProvider>
     </>
   )
-}
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired
 }
 
 export default MyApp

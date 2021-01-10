@@ -4,13 +4,13 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import darcula from 'react-syntax-highlighter/dist/cjs/styles/prism/darcula'
 import { List } from '@react-lists/core'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   section: {
     marginTop: 50
   }
 }))
 
-const GetStartedSection = () => {
+const GetStartedSection: React.FunctionComponent = () => {
   const classes = useStyles()
 
   return (

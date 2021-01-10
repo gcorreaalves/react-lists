@@ -6,7 +6,13 @@ import { PACKAGE_NAME } from './constants'
 describe('ListIndex component', () => {
   it('should render correctly', () => {
     const wrapper = render(
-      <ListIndex height={100} items={['A', 'B', 'C']} onItemClick={() => {}} />
+      <ListIndex
+        height={100}
+        items={['A', 'B', 'C']}
+        onItemClick={() => {
+          return null
+        }}
+      />
     )
 
     expect(wrapper).toMatchSnapshot()
@@ -14,7 +20,13 @@ describe('ListIndex component', () => {
 
   it('should render 3 items', () => {
     const wrapper = mount(
-      <ListIndex height={100} items={['A', 'B', 'C']} onItemClick={() => {}} />
+      <ListIndex
+        height={100}
+        items={['A', 'B', 'C']}
+        onItemClick={() => {
+          return null
+        }}
+      />
     )
 
     expect(wrapper.find('li').length).toBe(3)
@@ -22,7 +34,13 @@ describe('ListIndex component', () => {
 
   it('should render empty', () => {
     const wrapper = mount(
-      <ListIndex height={100} items={[]} onItemClick={() => {}} />
+      <ListIndex
+        height={100}
+        items={[]}
+        onItemClick={() => {
+          return null
+        }}
+      />
     )
 
     expect(wrapper.find('li').length).toBe(0)

@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Header = () => {
+const Menu: React.FunctionComponent = () => {
   const classes = useStyles()
   const theme = useTheme()
   const open = useMenuOpen()
@@ -152,4 +152,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Menu

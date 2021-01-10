@@ -5,7 +5,7 @@ import InfiniteScrollList from '../components/examples/InfiniteScrollList'
 import ContactGroupedList from '../components/examples/ContactGroupedList'
 import ChatMessagesReverseList from '../components/examples/ChatMessagesReverseList'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   container: {
     maxWidth: '680px',
     margin: '30px auto',
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ExamplesSection = () => {
+const ExamplesSection: React.FunctionComponent = () => {
   const classes = useStyles()
 
   return (
