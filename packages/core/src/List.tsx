@@ -1,18 +1,18 @@
 import React from 'react'
-import Core, { CoreTypes } from './Core'
+import Core, { ICoreTypes } from './Core'
 import ListItem from './ListItem'
 
-interface ListTypes extends CoreTypes {
-  items: Array<unknown>
+interface IProps extends ICoreTypes {
+  items: Array<string | unknown>
   itemRenderer: React.FunctionComponent
   onItemClick?: (event: React.MouseEvent) => void
 }
 
-const List: React.FunctionComponent<ListTypes> = props => {
+const List: React.FunctionComponent<IProps> = props => {
   const listRef = React.useRef(null)
   const { items, itemRenderer, onItemClick } = props
 
-  const renderItem = (item, index) => {
+  const renderItem = (item, index: number) => {
     const key = item.id || index
 
     return (

@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => {
     root: {
       display: 'flex'
     },
-    content: props => {
+    content: (props: { menuOpen: boolean }) => {
       return {
         flexGrow: 1,
         padding: theme.spacing(3),

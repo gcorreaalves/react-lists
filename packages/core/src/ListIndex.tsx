@@ -26,13 +26,13 @@ const styles: { [key: string]: React.CSSProperties } = {
   }
 }
 
-interface PropTypes {
+interface IProps {
   height: number
   items: Array<string>
   onItemClick: (selector: string) => (event: React.MouseEvent) => void
 }
 
-const ListIndex: React.FunctionComponent<PropTypes> = ({
+const ListIndex: React.FunctionComponent<IProps> = ({
   height,
   items,
   onItemClick

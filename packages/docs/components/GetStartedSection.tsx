@@ -12,6 +12,9 @@ const useStyles = makeStyles(() => ({
 
 const GetStartedSection: React.FunctionComponent = () => {
   const classes = useStyles()
+  const ItemRenderer: React.FunctionComponent<{ item: string }> = ({
+    item
+  }) => <>{item}</>
 
   return (
     <section className={classes.section} id='get-started'>
@@ -58,7 +61,6 @@ const GetStartedSection: React.FunctionComponent = () => {
       </Box>
       <Box mb={2} mt={2}>
         <Typography paragraph>Simple usage example.</Typography>
-
         <List
           listHeight={400}
           items={[
@@ -268,7 +270,7 @@ const GetStartedSection: React.FunctionComponent = () => {
             'Zambia',
             'Zimbabwe'
           ]}
-          itemRenderer={({ item }) => item}
+          itemRenderer={ItemRenderer}
         />
       </Box>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Core, { CoreTypes } from './Core'
+import Core, { ICoreTypes } from './Core'
 import ListItem from './ListItem'
 import ListIndex from './ListIndex'
 import { PACKAGE_NAME } from './constants'
@@ -28,17 +28,17 @@ const styles: { [key: string]: React.CSSProperties } = {
   }
 }
 
-interface GroupListTypes extends CoreTypes {
+interface IProps extends ICoreTypes {
   displayIndexMenu?: boolean
   displaySubHeaders?: boolean
   items: {
     [key: string]: {
       header: string
-      data: Array<unknown>
+      data: Array<string | unknown>
     }
   }
   itemRenderer: React.FunctionComponent
-  stickySubHeaders: boolean
+  stickySubHeaders?: boolean
   subHeaderRenderer?: React.FunctionComponent<{ text: string }>
   onItemClick?: (event: React.MouseEvent) => void
 }
@@ -47,7 +47,7 @@ const SubHeaderDefault: React.FunctionComponent<{ text: string }> = ({
   text
 }) => <>{text}</>
 
-const GroupList: React.FunctionComponent<GroupListTypes> = props => {
+const GroupList: React.FunctionComponent<IProps> = props => {
   const {
     displayIndexMenu,
     items,

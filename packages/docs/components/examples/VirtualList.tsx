@@ -27,7 +27,6 @@ const AnimalRenderer: React.FunctionComponent<{ url: string }> = ({ url }) => {
 
 const codeString = `import React from 'react'
 import faker from 'faker'
-import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core'
 import { List } from '@react-lists/core'
 

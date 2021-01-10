@@ -1,11 +1,10 @@
 import React, { useReducer, useContext, createContext } from 'react'
 
-interface Action {
-  type: string
-  payload: boolean
+interface IAction {
+  type: 'OPEN' | 'CLOSE'
 }
 
-const reducer = (state: boolean, action: Action) => {
+const reducer = (state: boolean, action: IAction) => {
   switch (action.type) {
     case 'OPEN':
       return true
@@ -35,5 +34,5 @@ export const MENU_CLOSE = 'CLOSE'
 export const MENU_OPEN = 'OPEN'
 export const MenuProvider = Provider
 export const useMenuOpen = (): boolean => useContext(MenuStateContext)
-export const useDispatchMenuOpen = (): React.Dispatch<Action> =>
+export const useDispatchMenuOpen = (): React.Dispatch<IAction> =>
   useContext(MenuDispatchContext)

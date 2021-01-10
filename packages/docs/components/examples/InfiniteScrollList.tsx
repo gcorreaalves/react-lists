@@ -99,7 +99,6 @@ const NewsRenderer: React.FunctionComponent<{
 
 const codeString = `import React from 'react'
 import faker from 'faker'
-import PropTypes from 'prop-types'
 import {
   Avatar,
   Card,

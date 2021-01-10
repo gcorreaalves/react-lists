@@ -2,13 +2,13 @@ import React from 'react'
 
 type Item = string | unknown
 
-interface PropTypes {
+interface IProps {
   item: Item
   renderer: React.FunctionComponent
   onClick?: (item: Item) => void
 }
 
-const ListItem: React.FunctionComponent<PropTypes> = ({
+const ListItem: React.FunctionComponent<IProps> = ({
   item,
   renderer,
   onClick

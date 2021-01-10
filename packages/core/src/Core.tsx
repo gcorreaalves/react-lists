@@ -19,10 +19,9 @@ const styles: { [key: string]: React.CSSProperties } = {
   }
 }
 
-export interface CoreTypes {
+export interface ICoreTypes {
   displayLoading?: boolean
   listHeight: number
-  listRef: React.RefObject<HTMLUListElement>
   loadingRenderer?: React.FunctionComponent
   reverse?: boolean
   onBottomReached?: () => void
@@ -30,7 +29,11 @@ export interface CoreTypes {
   onTopReached?: () => void
 }
 
-const Core: React.FunctionComponent<CoreTypes> = ({
+export interface IProps extends ICoreTypes {
+  listRef: React.RefObject<HTMLUListElement>
+}
+
+const Core: React.FunctionComponent<IProps> = ({
   children,
   displayLoading,
   listHeight,
