@@ -32,7 +32,7 @@ const GetStartedSection: React.FunctionComponent = () => {
           <Typography>virtual list</Typography>
         </li>
         <li>
-          <Typography>infinite scroll</Typography>
+          <Typography>infinite scroll (coming soon)</Typography>
         </li>
         <li>
           <Typography>index to browse the list easily</Typography>
